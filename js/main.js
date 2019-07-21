@@ -51,7 +51,8 @@ const md = new Remarkable({
                 
                         console.log('clicked ')
                        
-                        $.get('http://localhost:8000/md/'+e.currentTarget.outerText,function(data){
+                        $.get('https://dreamy-swanson-53e5a7.netlify.com/md/'+e.currentTarget.outerText,function(data){
+                        // $.get('http://localhost:8000/md/'+e.currentTarget.outerText,function(data){
                             const rendered = md.render(data)
                             localStorage.setItem('blogEntry', rendered); 
                             window.location.href = "page.html";
