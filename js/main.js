@@ -29,7 +29,7 @@ const md = new Remarkable({
   });
 
   const fileExt = ".md";
-  $.get('https://dreamy-swanson-53e5a7.netlify.com/md', function(data) {
+  $.get('https://homegrown-dev.netlify.com/md', function(data) {
 //   $.get('http://localhost:8000/md', function(data) {
     
     console.log(data)
@@ -51,7 +51,7 @@ const md = new Remarkable({
                 
                         console.log('clicked ')
                        
-                        $.get('https://dreamy-swanson-53e5a7.netlify.com/md/'+e.currentTarget.outerText,function(data){
+                        $.get('https://homegrown-dev.netlify.com/md/'+e.currentTarget.outerText,function(data){
                         // $.get('http://localhost:8000/md/'+e.currentTarget.outerText,function(data){
                             const rendered = md.render(data)
                             localStorage.setItem('blogEntry', rendered); 
