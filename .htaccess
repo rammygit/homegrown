@@ -539,7 +539,7 @@ AddDefaultCharset utf-8
 # includes rather private places such as the CMS's directories).
 
 <IfModule mod_autoindex.c>
-    Options -Indexes
+    Options +Indexes
 </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
