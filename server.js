@@ -44,7 +44,7 @@ marked.setOptions({
   const readDirectory = async function (basePath) {
 
     let appendHTMLs = []
-    console.log('printing the base path at the start => ',basePath)
+    //console.log('printing the base path at the start => ',basePath)
 
     
 
@@ -59,10 +59,10 @@ marked.setOptions({
         // console.log(" file list   => ", dirent)
         //  console.log('dirent stat =  is file  =>', stat.isFile())
         if (stat.isFile()) {
-            console.log(' it is a file => ', dirent.name)
+           // console.log(' it is a file => ', dirent.name)
             if (file_ext === '.html' || file_ext === '.js' || file_ext === '.css' || file_ext === '.md') {
                 if(FILE_IGNORE.indexOf (dirent.name ) == -1) {
-                    console.log('reading the file => ',dirent.name)
+                    //console.log('reading the file => ',dirent.name)
                     let appendHTML = await process(basePath, dirent)
                     appendHTMLs.push(appendHTML)
                 } 
@@ -70,7 +70,7 @@ marked.setOptions({
         } else {
             // console.log('reading the child directory => ', basePath + dirent.name + '/')
             if(DIRECTORY_IGNORE.indexOf (dirent.name ) == -1) {
-                console.log('reading the directory => ',dirent.name)
+                //console.log('reading the directory => ',dirent.name)
                 readDirectory(basePath + dirent.name + '/')
             }
         }
@@ -93,7 +93,7 @@ const process = async function (basePath, dirent) {
     // jus get the filename without the extension. need to find a better way to do this. 
     const fileName = dirent.name.substring(0,dirent.name.length -3)
 
-    console.log(`filename => ${fileName}`)
+    //console.log(`filename => ${fileName}`)
 
     //Calling fsPromises.mkdir() when path is a directory 
     //that exists results in a rejection only when recursive is false.
@@ -144,13 +144,13 @@ const start = async function () {
     const filterFunc = (src, dest) => {
         // your logic here
         // it will be copied if return true
-        console.log(`src => ${src}`)
+        //console.log(`src => ${src}`)
         if(DIRECTORY_IGNORE.includes(src)){
             // if it is not in the ignore directory,  
-            console.log('return false ')
+            //console.log('return false ')
             return false
         }
-        console.log('return true')
+        //console.log('return true')
         // true will make sure file copy happens. 
         return true
 
@@ -175,7 +175,7 @@ const start = async function () {
 
     let htmls = await readDirectory(PROJECT_PATH+'md/')
 
-    console.log(`htmls ${htmls}`)
+    //console.log(`htmls ${htmls}`)
 
     htmls.forEach((html)=>$(html).appendTo('#content'));
 
