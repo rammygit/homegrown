@@ -13,7 +13,7 @@ But this is my dependencies look like. Marked is a good markdown convertor to ht
 - Understand how the build performance is on high volume. 
 - Build speed on huge markdown file. 
 - Implement a pagination. 
-- 
+- Improve markdown code highlighting.
 
 ```json
  "dependencies": {
