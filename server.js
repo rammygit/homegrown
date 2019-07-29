@@ -11,6 +11,8 @@ const cheerio = require('cheerio')
 
 const pretty = require('pretty')
 
+const property = require('./strings.json');
+
 
 
 const FILE_IGNORE = ['.gitignore','server.js','server_new.js','package-lock.json','package.json']
@@ -23,6 +25,8 @@ const TARGET_DIR = `${PROJECT_PATH}public`
 const TEMP_DIR = '/tmp/mysite'
 
 const DIRECTORY_IGNORE = [`${PROJECT_PATH}node_modules`,`${PROJECT_PATH}.git`]
+
+
 
 // Set options
 // `highlight` example uses `highlight.js`
@@ -98,19 +102,19 @@ const process = async function (basePath, dirent) {
     //Calling fsPromises.mkdir() when path is a directory 
     //that exists results in a rejection only when recursive is false.
     // remove the file extension. 
-    await fsPromises.mkdir(`${TARGET_DIR}/${fileName}`).catch(console.error);
+    await fsPromises.mkdir(`${TARGET_DIR}/content/${fileName}`,{recursive:true}).catch(console.error);
 
    
     const htmlFile = pretty(marked(fileContent))
 
     // create an index.html for every md file. with the filename as folder and index.html inside it.
-    fsPromises.writeFile(`${TARGET_DIR}/${fileName}/index.html`,htmlFile,{flag:'w'}).catch(console.error);
+    fsPromises.writeFile(`${TARGET_DIR}/content/${fileName}/index.html`,htmlFile,{flag:'w'}).catch(console.error);
 
     // modify_indexpage('/md/'+fileName+'/index.html',fileName)
 
     // $(`<a href="/md/${fileName}/index.html">${fileName}</a>`).appendTo('#content')
 
-    return `<a href="/${fileName}/">${fileName}</a></br>`
+    return `<a href="/content/${fileName}/">${fileName}</a></br>`
 }
 
 
@@ -120,7 +124,7 @@ const process = async function (basePath, dirent) {
 //add try catch
 const start = async function () {
 
-
+    console.log(`author printing => ${property.blogTitle}`)
     // const exists = await fs.pathExists('/tmp/mysite')
     //if(exists)
     fsExtra.removeSync(TEMP_DIR)
@@ -157,7 +161,8 @@ const start = async function () {
       }
 
     
-     fsExtra.copySync(PROJECT_PATH, TEMP_DIR, {overwrite:true,filter: filterFunc})
+      // async 
+    fsExtra.copySync(PROJECT_PATH, TEMP_DIR, {overwrite:true,filter: filterFunc})
     
     console.log('success copying files to temp directory')
 
@@ -175,21 +180,78 @@ const start = async function () {
 
     let htmls = await readDirectory(PROJECT_PATH+'md/')
 
-    //console.log(`htmls ${htmls}`)
+    
+    let page = 1
+    let postPerPage = property.postPerPage
+    let totalPosts = htmls.length
+    let totalPageCount = Math.ceil(totalPosts/postPerPage);
 
-    htmls.forEach((html)=>$(html).appendTo('#content'));
+    console.log(`total page count => ${totalPageCount}`)
+
+    for(let j=0;j<totalPageCount;j++){
+
+        $('#content').empty()
+        for (let i = 0; i < postPerPage; i++) {
+            $(htmls[i]).appendTo('#content')
+            
+        }
+
+
+
+        //remove the process htmls from the array
+        htmls = htmls.slice(postPerPage)
+        console.log(`after slice => ${htmls}`)
+        
+        // increment the page count to point to the next page
+        page++
+        
+        $( '#link_next').attr('href','#')
+        $( '#link_prev').attr('href','#')
+        if(page <= totalPageCount)
+            $( '#link_next').attr('href',`/content/${page}`)
+        if((page-1)!== 1){
+            $( '#link_prev').attr('href',`/content/${page-2}`)
+            if(page-2 === 1){
+                $( '#link_prev').attr('href',`/`)
+            }
+            
+        }
+            
+        //finalize the index html
+        const prettyHTML = pretty($.html())
+
+        //console.log(`pretty html => ${prettyHTML}`)
+
+        await fsPromises.mkdir(`${TARGET_DIR}/content/${page}`,{recursive:true}).catch(console.error);
+        if(j==0){
+            // if it is the first page. then update the main index.html
+            //finally update the main index html
+            
+            fsPromises.writeFile(`${TARGET_DIR}/index.html`,prettyHTML,{flag:'w'}).catch(console.error);
+        } else {
+            // write to the next page index.html
+            
+            fsPromises.writeFile(`${TARGET_DIR}/content/${page-1}/index.html`,prettyHTML,{flag:'w'}).catch(console.error);
+        }
+
+    }
+    
+     
+
+   // htmls.forEach((html)=>$(html).appendTo('#content'));
 
     
 
     // console.log($.html())
 
-    const prettyHTML = pretty($.html())
+   // const prettyHTML = pretty($.html())
 
     //finally update the main index html
-    fsPromises.writeFile(`${TARGET_DIR}/index.html`,prettyHTML,{flag:'w'}).catch(console.error);
+   // fsPromises.writeFile(`${TARGET_DIR}/index.html`,prettyHTML,{flag:'w'}).catch(console.error);
 
     
 }
+
 
 start()
 

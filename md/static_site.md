@@ -26,5 +26,23 @@ But this is my dependencies look like. Marked is a good markdown convertor to ht
 
 ```
 
+### Local Setup 
+
+- Prerequisite have python version 2.7 , for running your local webserver. There are varied options you can chose them, upto your preference. 
+- Checkout this project and cd into the project. 
+- run `npm start` 
+- Above step will create a target `public` folder
+- Now cd into `public` folder within this project. 
+- Run `python -m SimpleHTTPServer 8000` , this will run a local webserver serving on port 8000. 
+
+### Production Setup 
+
+- Build script is `npm start`
+- Deploy directory is `public`
+- You should be good to go. 
+
+
+
+
 With Love 
 a lazydev
