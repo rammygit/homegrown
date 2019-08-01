@@ -11,7 +11,9 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <link href="/fontawesome-free-5.10.0/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link href="/fontawesome-free-5.10.0/css/all.css" rel="stylesheet">
+    <!--load all styles -->
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
 
@@ -23,23 +25,61 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
+
+    <section class="section">
+      <div class="container">
+        <div class="level">
+          <div class="level-item has-text-centered">
+            <div>
+              <h1 id="h_blogTitle" class="title has-text-info">Net Notes</h1>
+              <p class="heading">about everything under sun</p>
+            </div>
+          </div>
+        </div>
+
+
+        <nav class="level">
+            <div class="level-item has-text-centered">
+              <div class="has-text-weight-medium">
+                <a href="/content/about/">About Me</a>
+                <!-- <p class="has-text-weight-medium">Tweets</p> -->
+              </div>
+            </div>
+            
+            <div class="level-item has-text-centered">
+                <div>
+                  <p class="has-text-weight-medium">Articles</p>
+                </div>
+              </div>
+
+              <div class="level-item has-text-centered">
+                  <div>
+                    <p class="has-text-weight-medium">Bookmarks</p>
+                  </div>
+                </div>
+          </nav>
+
+
+        <div id="content" class="has-text-centered"></div>
+      </div>
+    </section>
+
     <!-- Add your site or application content here -->
-    <p id="p_blogTitle">Hello world! Welcome to my Blog.</p>
+    <!-- <p id="p_blogTitle">Hello world! Welcome to my Blog.</p> -->
 
 
-    <div id="content"></div>
 
-    <a id="link_prev" href="#"> <i class="fas fa-arrow-circle-left"></i> </a>
-    <a id="link_next" href="#"> <i class="fas fa-arrow-circle-right"></i> </a>
-    
+    <a id="link_prev" href="#" class="pagination-previous">Previous</a>
+    <a id="link_next" href="#" class="pagination-next">Next page</a>
+    <!-- <a id="link_prev" href="#"> <i class="fas fa-arrow-circle-left"></i> </a>
+    <a id="link_next" href="/content/2"> <i class="fas fa-arrow-circle-right"></i> </a> -->
+
     <script src="/js/vendor/modernizr-3.7.1.min.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js " 
-          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
-          crossorigin="anonymous" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
     <script>
       window.jQuery || document.write('<script src="/js/vendor/jquery-3.4.1.min.js"><\/script>')
     </script>
-   
+
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
 
@@ -56,6 +96,17 @@
       ga('send', 'pageview')
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Powered by</strong> <a target="new" href="https://github.com/rammygit/homegrown">Homegrown</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+      </div>
+    </footer>
   </body>
 
 </html>
