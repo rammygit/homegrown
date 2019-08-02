@@ -26,7 +26,10 @@ const TARGET_DIR = `${PROJECT_PATH}public`
 
 const TEMP_DIR = '/tmp/mysite'
 
-const DIRECTORY_IGNORE = [`${PROJECT_PATH}node_modules`,`${PROJECT_PATH}.git`,`${PROJECT_PATH}build`]
+const DIRECTORY_IGNORE = [`${PROJECT_PATH}node_modules`,
+                          `${PROJECT_PATH}.git`,
+                          `${PROJECT_PATH}build`,
+                          `${PROJECT_PATH}public`]
 
 
 
@@ -68,6 +71,7 @@ const start = async function () {
             //console.log('return false ')
             return false
         }
+
         //console.log('return true')
         // true will make sure file copy happens. 
         return true
