@@ -25,57 +25,64 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-
-    <section class="section">
-      <div class="container">
-        <div class="level">
-          <div class="level-item has-text-centered">
-            <div>
-              <h1 id="h_blogTitle" class="title has-text-info">Net Notes</h1>
-              <p class="heading">about everything under sun</p>
-            </div>
+    <nav class="level">
+      <!-- left side  -->
+      <div class="level-left">
+          <div class="level-item hero-body">
+            <h2 id="h_blogTitle" class="subtitle is-3">Rammy</h2>
           </div>
-        </div>
-
-
-        <nav class="level">
-            <div class="level-item has-text-centered">
-              <div class="has-text-weight-medium">
-                <a href="/content/about/">About Me</a>
-                <!-- <p class="has-text-weight-medium">Tweets</p> -->
-              </div>
-            </div>
-            
-            <div class="level-item has-text-centered">
-                <div>
-                  <p class="has-text-weight-medium">Articles</p>
-                </div>
-              </div>
-
-              <div class="level-item has-text-centered">
-                  <div>
-                    <p class="has-text-weight-medium">Bookmarks</p>
-                  </div>
-                </div>
-          </nav>
-
-
-        <div id="content" class="has-text-centered"></div>
       </div>
-    </section>
+
+      <!-- right side -->
+      <div class="level-right">
+          <p class="panel-tabs">
+              <a href="/content/about/" class="is-active is-light">About Me</a>
+              <a href="/" class="is-active is-light">Articles</a>
+              <a class="is-active is-light">Bookmarks</a>
+              <!-- <a>forks</a> -->
+            </p>
+         
+        </div>
+    </nav>
+      
+   
+
+
+        <section>
+            <div id="content" class="content has-text-centered">
+                
+                <a href="/content/about/"><i class="fas fa-feather-alt"></i> About</a>
+                <br>
+                <br>
+                <a href="/content/maven/"><i class="fas fa-angle-right"></i> Maven</a>
+                <br>
+                <br>
+                <a href="/content/maven/"><i class="fas fa-angle-right"></i> Maven</a>
+                <br>
+            </div>
+        </section>
+        
+     
 
     <!-- Add your site or application content here -->
     <!-- <p id="p_blogTitle">Hello world! Welcome to my Blog.</p> -->
 
 
-
-    <a id="link_prev" href="#" class="pagination-previous">Previous</a>
-    <a id="link_next" href="#" class="pagination-next">Next page</a>
+    <div class="level ">
+        <div class ="level-item has-text-centered">
+            <a id="link_prev" href="#" class=" button is-link">Previous</a>
+        </div>
+        <div class ="level-item has-text-centered">
+            <a id="link_next" href="/content/2" class="button is-link">Next page</a>
+        </div>
+        
+    </div>
+    
     <!-- <a id="link_prev" href="#"> <i class="fas fa-arrow-circle-left"></i> </a>
     <a id="link_next" href="/content/2"> <i class="fas fa-arrow-circle-right"></i> </a> -->
 
-    <script src="/js/vendor/modernizr-3.7.1.min.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
+    <script defer src="/js/vendor/modernizr-3.7.1.min.js" ></script>
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
     <script>
       window.jQuery || document.write('<script src="/js/vendor/jquery-3.4.1.min.js"><\/script>')
     </script>
@@ -95,18 +102,20 @@
       ga('set', 'transport', 'beacon');
       ga('send', 'pageview')
     </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script defer src="https://www.google-analytics.com/analytics.js" async></script>
 
 
 
-    <footer class="footer">
-      <div class="content has-text-centered">
+    <!-- <footer >
+      <div class=" has-text-centered">
         <p>
           <strong>Powered by</strong> <a target="new" href="https://github.com/rammygit/homegrown">Homegrown</a>. The source code is licensed
           <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
         </p>
       </div>
-    </footer>
+    </footer> -->
+
+
   </body>
 
 </html>
