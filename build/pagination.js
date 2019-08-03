@@ -23,7 +23,6 @@ const paginate = async function($,property,htmls,TARGET_DIR){
 
         //remove the process htmls from the array
         htmls = htmls.slice(postPerPage)
-        console.log(`after slice => ${htmls}`)
         
         // increment the page count to point to the next page
         page++

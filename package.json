@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install && node server.js"
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyle.css",
+    "css-watch": "npm run css-build -- --watch",
+    "clean-css": "cleancss -o css/mystyle.min.css css/mystyle.css && cleancss -o css/main.min.css css/main.css && cleancss -o css/normalize.min.css css/normalize.css",
+    "start": "npm install && npm run css-build && npm run clean-css && node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "clean-css": "^4.2.1",
+    "clean-css-cli": "^4.3.0",
     "fs-extra": "^8.1.0",
     "highlight.js": "^9.15.8",
     "marked": "^0.7.0",
     "pretty": "^2.0.0"
+  },
+  "devDependencies": {
+    "bulma": "^0.7.5",
+    "node-sass": "^4.12.0"
   }
 }
