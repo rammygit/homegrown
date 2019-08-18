@@ -6,26 +6,26 @@ const cheerio = require('cheerio')
 const property = require('./strings.json');
 const processContent  = require('./build/util');
 const paginate  = require('./build/pagination');
-const PROJECT_PATH = __dirname+'/'
-const TARGET_DIR = `${PROJECT_PATH}public`
+const PROJECT_PATH = __dirname+'/src'
+const TARGET_DIR = `${PROJECT_PATH}/public`
 const TEMP_DIR = '/tmp/mysite'
-const DIRECTORY_IGNORE = [`${PROJECT_PATH}node_modules`,
-                          `${PROJECT_PATH}.git`,
-                          `${PROJECT_PATH}build`,
-                          `${PROJECT_PATH}sass`,
-                          `${PROJECT_PATH}public`]
+const DIRECTORY_IGNORE = [`${PROJECT_PATH}/node_modules`,
+                          `${PROJECT_PATH}/.git`,
+                          `${PROJECT_PATH}/build`,
+                          `${PROJECT_PATH}/sass`,
+                          `${PROJECT_PATH}/public`]
+
+                          
+const PORT = process.env.PORT || 3000;
+const production = process.env.
 
 
-
-
-
-
-  
 //start here 
 //add try catch
 const start = async function () {
 
-    fsExtra.removeSync(TEMP_DIR)
+    // fsExtra.removeSync(TEMP_DIR)
+
     //delete the existing target dir. Need to find out performant way to figure this. 
     fsExtra.removeSync(TARGET_DIR)
     
@@ -53,22 +53,22 @@ const start = async function () {
 
       }
     
-    fsExtra.copySync(PROJECT_PATH, TEMP_DIR, {overwrite:true,filter: filterFunc})
+    fsExtra.copySync(PROJECT_PATH, TARGET_DIR, {overwrite:true,filter: filterFunc})
     
-    console.log('success copying files to temp directory')
+    console.log('success copying files to target directory')
 
-    await fsExtra.move(TEMP_DIR,`${TARGET_DIR}`,{ overwrite: true })
+    // await fsExtra.move(TEMP_DIR,`${TARGET_DIR}`,{ overwrite: true })
 
     // delete the unneeded md directory
     await fsExtra.remove(`${TARGET_DIR}/md`)
     // remove the md folder 
     
-    const mainIndexFileContent = await fsPromises.readFile(PROJECT_PATH+'index.html',{encoding:'utf-8'})
+    const mainIndexFileContent = await fsPromises.readFile(`${PROJECT_PATH}/index.html`,{encoding:'utf-8'})
     //load the main index file for manipulation. 
     const $= cheerio.load(mainIndexFileContent)
 
     // let htmls = await readDirectory(PROJECT_PATH+'md/')
-    let htmls = await processContent(`${PROJECT_PATH}md/`,TARGET_DIR)
+    let htmls = await processContent(`${PROJECT_PATH}/md/`,TARGET_DIR)
   
     // this will add pagination pbased on the strings.json file where postPerPage is used.
     await paginate($,property,htmls,TARGET_DIR)
@@ -76,6 +76,8 @@ const start = async function () {
 
 
 start()
+
+
 
 
  
