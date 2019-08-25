@@ -4,11 +4,12 @@ const fsPromises = require('fs').promises;
 const fsExtra = require('fs-extra')
 const cheerio = require('cheerio')
 const property = require('./strings.json');
-const processContent  = require('./build/util');
-const paginate  = require('./build/pagination');
+const processContent  = require('./src/build/util');
+const paginate  = require('./src/build/pagination');
 const PROJECT_PATH = __dirname+'/src'
-const TARGET_DIR = `${PROJECT_PATH}/public`
-const TEMP_DIR = '/tmp/mysite'
+// const TARGET_DIR = `${PROJECT_PATH}/public`
+const TARGET_DIR = `${__dirname}/public`
+// const TEMP_DIR = '/tmp/mysite'
 const DIRECTORY_IGNORE = [`${PROJECT_PATH}/node_modules`,
                           `${PROJECT_PATH}/.git`,
                           `${PROJECT_PATH}/build`,
@@ -17,7 +18,7 @@ const DIRECTORY_IGNORE = [`${PROJECT_PATH}/node_modules`,
 
                           
 const PORT = process.env.PORT || 3000;
-const production = process.env.
+//const production = process.env.
 
 
 //start here 
@@ -29,9 +30,9 @@ const start = async function () {
     //delete the existing target dir. Need to find out performant way to figure this. 
     fsExtra.removeSync(TARGET_DIR)
     
-    await fsExtra.ensureDir(TEMP_DIR,{
-        mode: 0o2775
-      }) 
+    // await fsExtra.ensureDir(TEMP_DIR,{
+    //     mode: 0o2775
+    //   }) 
     
     await fsExtra.ensureDir(TARGET_DIR,{
         mode: 0o2775
