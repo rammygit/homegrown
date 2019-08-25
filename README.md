@@ -1,4 +1,4 @@
-# homegrown
+# HomeGrown
 Simple static website for my blog with markdown support
 
 This is from an idea that I am missing in current static site generator. Yes they build fast but it comes with so much bells and whistles. 
