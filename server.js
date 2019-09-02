@@ -3,7 +3,7 @@
 const fsPromises = require('fs').promises;
 const fsExtra = require('fs-extra')
 const cheerio = require('cheerio')
-const property = require('./strings.json');
+const property = require('./config.json');
 const processContent  = require('./src/build/util');
 const paginate  = require('./src/build/pagination');
 const PROJECT_PATH = __dirname+'/src'
@@ -72,7 +72,9 @@ const start = async function () {
     let htmls = await processContent(`${PROJECT_PATH}/md/`,TARGET_DIR)
   
     // this will add pagination pbased on the strings.json file where postPerPage is used.
-    await paginate($,property,htmls,TARGET_DIR)
+    paginate($,property,htmls,TARGET_DIR)
+
+
 }
 
 
