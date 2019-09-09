@@ -1,6 +1,13 @@
 {
     "blogTitle":"Ram's Home Page",
-    "postPerPage": "2", 
-    "author":"Ram"
+    "blogSubTitle": "powered by <a href='www.google.com'>StaticFire</a>",
+    "postPerPage": "3", 
+    "author":"Ram",
+    "social":{
+        "twitter":"",
+        "linkedIn":"",
+        "github":""
+    }
+    
 
 }

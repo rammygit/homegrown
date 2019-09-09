@@ -8,13 +8,15 @@
     "css-build": "node-sass --omit-source-map-url src/sass/mystyles.scss src/css/mystyle.css",
     "css-watch": "npm run css-build -- --watch",
     "clean-css": "cleancss -o src/css/mystyle.min.css src/css/mystyle.css && cleancss -o src/css/main.min.css src/css/main.css && cleancss -o src/css/normalize.min.css src/css/normalize.css",
-    "start": "npm install && npm run css-build && npm run clean-css && node server.js"
+    "start": "npm install && npm run css-build && npm run clean-css && node server.js && node watcher.js",
+    "quickWatchTask": "npm run css-build && npm run clean-css && node server.js && node watcher.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bulma": "^0.7.5",
     "cheerio": "^1.0.0-rc.3",
+    "chokidar": "^3.0.2",
     "clean-css": "^4.2.1",
     "clean-css-cli": "^4.3.0",
     "express": "^4.17.1",

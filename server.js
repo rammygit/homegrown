@@ -1,11 +1,13 @@
 //server.js
-
+// change test dddd dd
 const fsPromises = require('fs').promises;
 const fsExtra = require('fs-extra')
 const cheerio = require('cheerio')
 const property = require('./config.json');
 const processContent  = require('./src/build/util');
 const paginate  = require('./src/build/pagination');
+const spawn = require('child_process').spawn; 
+
 const PROJECT_PATH = __dirname+'/src'
 // const TARGET_DIR = `${PROJECT_PATH}/public`
 const TARGET_DIR = `${__dirname}/public`
@@ -18,6 +20,7 @@ const DIRECTORY_IGNORE = [`${PROJECT_PATH}/node_modules`,
 
                           
 const PORT = process.env.PORT || 3000;
+const doWatch = process.env.watch || true
 //const production = process.env.
 
 
@@ -74,11 +77,54 @@ const start = async function () {
     // this will add pagination pbased on the strings.json file where postPerPage is used.
     paginate($,property,htmls,TARGET_DIR)
 
+    
+    
+
 
 }
 
+ 
+/**
+ * starts the local server for you. 
+ * expects the python to be available in the path.
+ * change to any local server you want to spin up. Feel free to do so.
+ * if you are mac don't worry about. 
+ * Btw this looks for python 2.7  
+ */
+const startServer = () => {
+  console.log('after the process complete , starting server ')
 
-start()
+  const process = spawn('python', ['-m','SimpleHTTPServer','8000'],{cwd:'./public'});
+  
+  process.stdout.on('data',  (data) => {
+      console.log('stdout: ' + data);
+  });
+
+  // process.stderr.on('data',  (data) => {
+  //     console.log('stderr: ' + data);
+  // });
+
+  process.on('close',  (code) => {
+      console.log('Child process exit with code: ' + code);
+  });
+
+  process.on('error',  (code) => {
+    console.error('Child process error with code: ',code);
+  });
+}
+
+
+/**
+ * start here 
+ */
+start().then(()=>{
+  
+  startServer()
+
+});
+
+
+
 
 
 
