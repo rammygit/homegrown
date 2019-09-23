@@ -3,23 +3,31 @@
 const fsPromises = require('fs').promises;
 const pretty = require('pretty')
 
+/**
+ * adds the pagination feature to the content folder in the markdown format
+ * @param {*} $ 
+ * @param {*} property 
+ * @param {*} htmls 
+ * @param {*} TARGET_DIR 
+ */
 const paginate = async function($,property,htmls,TARGET_DIR){
     let page = 1
     let postPerPage = property.postPerPage
     let totalPosts = htmls.length
     let totalPageCount = Math.ceil(totalPosts/postPerPage);
 
-    console.log(`total page count => ${totalPageCount}`)
+    console.log("total page count =>",totalPageCount)
 
+    /**
+     *  $ points to the cheerio where the main index.html is loaded. 
+     *  
+     */
     for(let j=0;j<totalPageCount;j++){
 
         $('#content').empty()
         for (let i = 0; i < postPerPage; i++) {
             $(htmls[i]).appendTo('#content')
-            
         }
-
-
 
         //remove the process htmls from the array
         htmls = htmls.slice(postPerPage)
@@ -38,6 +46,14 @@ const paginate = async function($,property,htmls,TARGET_DIR){
             }
             
         }
+
+
+        // change the the text of the title of the site based from the config.json
+        $('#h_blogTitle').text(property.blogTitle)
+        // add the text for the subtitle based from config.json
+        $('#h_blogSubTitle').text(property.blogSubTitle)
+
+
             
         //finalize the index html
         const prettyHTML = pretty($.html())
