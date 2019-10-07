@@ -23,6 +23,11 @@ const PORT = process.env.PORT || 3000;
 const doWatch = process.env.watch || true
 //const production = process.env.
 
+const yargs = require('yargs');
+
+
+
+
 
 //start here 
 //add try catch
@@ -114,12 +119,35 @@ const startServer = () => {
 }
 
 
+
+const argv = yargs
+    .command('production', 'Tells whether it is prod or dev', {
+        
+    })
+    .command('dev','for local development',{
+
+    })
+    // .option('time', {
+    //     alias: 't',
+    //     description: 'Tell the present Time',
+    //     type: 'boolean',
+    // })
+    .help()
+    .alias('help', 'h')
+    .argv;
+
 /**
  * start here 
  */
 start().then(()=>{
+
+
+  // start local python based server
+  if(argv._.includes('dev')){
+    startServer()
+  }
   
-  startServer()
+  
 
 });
 

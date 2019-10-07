@@ -8,8 +8,9 @@
     "css-build": "node-sass --omit-source-map-url src/sass/mystyles.scss src/css/mystyle.css",
     "css-watch": "npm run css-build -- --watch",
     "clean-css": "cleancss -o src/css/mystyle.min.css src/css/mystyle.css && cleancss -o src/css/main.min.css src/css/main.css && cleancss -o src/css/normalize.min.css src/css/normalize.css",
-    "start": "npm install && npm run css-build && npm run clean-css && node server.js && node watcher.js",
-    "quickWatchTask": "npm run css-build && npm run clean-css && node server.js && node watcher.js"
+    "start": "npm install && npm run css-build && npm run clean-css && node server.js production",
+    "start-dev": "npm install && npm run css-build && npm run clean-css && node server.js dev && node watcher.js",
+    "quickWatchTask": "npm run css-build && npm run clean-css && node server.js dev && node watcher.js"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +27,8 @@
     "marked": "^0.7.0",
     "node-sass": "^4.12.0",
     "pretty": "^2.0.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3",
     "yargs": "^13.3.0"
   },
   "devDependencies": {}
