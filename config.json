@@ -1,7 +1,7 @@
 {
-    "blogTitle":"Ram's Home Page",
-    "blogSubTitle": "powered by StaticFire Static Website Generator",
-    "postPerPage": "3", 
+    "blogTitle":"Ram's Weblog",
+    "blogSubTitle": "powered by StaticFire - Simple Static site Generator",
+    "postPerPage": "4", 
     "author":"Ram",
     "social":{
         "twitter":"",

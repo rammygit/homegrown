@@ -5,6 +5,7 @@ const path = require('path')
 const pretty = require('pretty')
 const marked = require('marked');
 const FILE_IGNORE = ['.gitignore','server.js','server_new.js','package-lock.json','package.json']
+const cheerio = require('cheerio')
 
 // Set options
 // `highlight` example uses `highlight.js`
@@ -27,12 +28,9 @@ marked.setOptions({
    * used for content/markdown processing.
    * @param {*} basePath 
    */
-  const processContent = async function (basePath,TARGET_DIR) {
+  const processContent = async function (basePath,TARGET_DIR,PROJECT_DIR) {
 
     let appendHTMLs = []
-    //console.log('printing the base path at the start => ',basePath)
-
-    
 
     const dirArr = await fsPromises.readdir(basePath, { withFileTypes: true })
 
@@ -42,21 +40,19 @@ marked.setOptions({
         const file_ext = path.extname(dirent.name)
         const stat = await fsPromises.lstat(basePath+dirent.name);
 
-        // console.log(" file list   => ", dirent)
-        //  console.log('dirent stat =  is file  =>', stat.isFile())
         if (stat.isFile()) {
-           // console.log(' it is a file => ', dirent.name)
+
             if (file_ext === '.html' || file_ext === '.js' || file_ext === '.css' || file_ext === '.md') {
                 if(FILE_IGNORE.indexOf (dirent.name ) == -1) {
-                    //console.log('reading the file => ',dirent.name)
-                    let appendHTML = await process(basePath, dirent,TARGET_DIR)
+
+                    let appendHTML = await process(basePath, dirent,TARGET_DIR,PROJECT_DIR)
                     appendHTMLs.push(appendHTML)
                 } 
             } 
         } else {
-            // console.log('reading the child directory => ', basePath + dirent.name + '/')
+
             if(DIRECTORY_IGNORE.indexOf (dirent.name ) == -1) {
-                //console.log('reading the directory => ',dirent.name)
+
                 readDirectory(basePath + dirent.name + '/')
             }
         }
@@ -70,7 +66,7 @@ marked.setOptions({
  * @param {*} basePath 
  * @param {*} dirent 
  */
-const process = async function (basePath, dirent,TARGET_DIR) {
+const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR) {
 
     
     //read the md 
@@ -79,27 +75,41 @@ const process = async function (basePath, dirent,TARGET_DIR) {
     // jus get the filename without the extension. need to find a better way to do this. 
     const fileName = dirent.name.substring(0,dirent.name.length -3)
 
-    //console.log(`filename => ${fileName}`)
+
 
     //Calling fsPromises.mkdir() when path is a directory 
     //that exists results in a rejection only when recursive is false.
     // remove the file extension. 
     await fsPromises.mkdir(`${TARGET_DIR}/content/${fileName}`,{recursive:true}).catch(console.error);
 
-   
-    const htmlFile = pretty(marked(fileContent))
+   //TODO: remove pretty here.
+    const htmlFile = await getPageHTMLContentToWrite(pretty(marked(fileContent)),PROJECT_DIR)
+
+    
 
     // create an index.html for every md file. with the filename as folder and index.html inside it.
     fsPromises.writeFile(`${TARGET_DIR}/content/${fileName}/index.html`,htmlFile,{flag:'w'}).catch(console.error);
 
-    // modify_indexpage('/md/'+fileName+'/index.html',fileName)
-
-    // $(`<a href="/md/${fileName}/index.html">${fileName}</a>`).appendTo('#content')
 
     return `<a href="/content/${fileName}/">${fileName}</a></br>`
 }
 
-// export { processContent };
+
+const getPageHTMLContentToWrite = async (htmlContent,PROJECT_DIR) => {
+
+
+    const pageHtmlContent = await fsPromises.readFile(`${PROJECT_DIR}/pages/post.html`,{encoding:'utf-8'})
+    //console.log(pageHtmlContent)
+    // console.log(htmlContent)
+    const $= cheerio.load(pageHtmlContent)
+    $('#page_content').empty()
+    $(htmlContent).appendTo('#page_content')
+   // console.log('what is getting returned  => ',pretty($.html()))
+    return pretty($.html())
+
+}
+
+
 
 module.exports = processContent
 
