@@ -91,10 +91,14 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR) {
     fsPromises.writeFile(`${TARGET_DIR}/content/${fileName}/index.html`,htmlFile,{flag:'w'}).catch(console.error);
 
 
-    return `<a href="/content/${fileName}/">${fileName}</a></br>`
+return `<a href="/content/${fileName}/">${fileName}</a></br>`  
 }
 
-
+/**
+ * get the html to pages.html 
+ * @param {*} htmlContent 
+ * @param {*} PROJECT_DIR 
+ */
 const getPageHTMLContentToWrite = async (htmlContent,PROJECT_DIR) => {
 
 
