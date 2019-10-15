@@ -174,6 +174,7 @@ const constructNavURL = (htmls,totalPosts,postPerPage,currentPageCount) => {
         if(currentPageCount == 1){
             // $( '#link_prev').attr('href',`/`)
             prevURL = '/'
+            nextURL = `/content/${currentPageCount+1}`
         } else {
             prevURL = `/content/${currentPageCount-1}`
             nextURL = `/content/${currentPageCount+1}`
