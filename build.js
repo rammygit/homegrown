@@ -32,11 +32,6 @@ const argv = yargs
     .command('dev','for local development',{
 
     })
-    // .option('time', {
-    //     alias: 't',
-    //     description: 'Tell the present Time',
-    //     type: 'boolean',
-    // })
     .help()
     .alias('help', 'h')
     .argv;
@@ -47,14 +42,8 @@ const argv = yargs
 //add try catch
 const start = async _ => {
 
-    // fsExtra.removeSync(TEMP_DIR)
-
     //delete the existing target dir. Need to find out performant way to figure this. 
     fsExtra.removeSync(TARGET_DIR)
-    
-    // await fsExtra.ensureDir(TEMP_DIR,{
-    //     mode: 0o2775
-    //   }) 
     
     await fsExtra.ensureDir(TARGET_DIR,{
         mode: 0o2775

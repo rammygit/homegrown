@@ -108,7 +108,10 @@ const getHTMLWithPagination = async function($,property,htmls,TARGET_DIR){
         // if htmls length is equal to total posts then it is the index page 
         
         //TODO:  this will modify the $ , need to update this to return the prev.next urls as object.
-        constructNavURL($,htmls,totalPosts,postPerPage,currentPageCount)
+        const navObj = constructNavURL(htmls,totalPosts,postPerPage,currentPageCount)
+
+        $( '#link_prev').attr('href',navObj['prev'])
+        $( '#link_next').attr('href',navObj['next'])
 
         
         //splice will modify array in place. this is also modifyin the original array in the first place. 
@@ -116,8 +119,6 @@ const getHTMLWithPagination = async function($,property,htmls,TARGET_DIR){
         htmls.splice(0,postPerPage).forEach(html => {
             $(html).appendTo('#content')
         });
-
-        
 
         // change the the text of the title of the site based from the config.json
         $('#h_blogTitle').text(property.blogTitle)
@@ -132,39 +133,58 @@ const getHTMLWithPagination = async function($,property,htmls,TARGET_DIR){
     return paginatedHTMLs
 }
 
-
-const constructNavURL = ($,htmls,totalPosts,postPerPage,currentPageCount) => {
+/**
+ * 
+ * @param {*} htmls 
+ * @param {*} totalPosts 
+ * @param {*} postPerPage 
+ * @param {*} currentPageCount 
+ */
+const constructNavURL = (htmls,totalPosts,postPerPage,currentPageCount) => {
     let [firstPage,lastPage] = [false,false]
-    // let [prevURL,nextURL] = ['','']
+    let [prevURL,nextURL] = ['','']
     if(htmls.length === totalPosts){
         firstPage = true
-        $( '#link_prev').attr('href','/')
-        $( '#link_next').attr('href',`/content/${currentPageCount+1}`)
+        prevURL = '/'
+        nextURL = `/content/${currentPageCount+1}`
+        // $( '#link_prev').attr('href','/')
+        // $( '#link_next').attr('href',`/content/${currentPageCount+1}`)
     }
 
     // if the length of htmls is less than postperpage then it is the last page. 
     // arr index starts at 0 so less than.
     if(htmls.length < postPerPage){
         lastPage = true
-        $( '#link_next').attr('href','#')
-        // if there are only 2 pages. 
+        // $( '#link_next').attr('href','#')
+        nextURL = '#'
+        //  usecase = if there are only 2 pages. 
         // when this is zero , point it to root index page
         if(currentPageCount-1 === 0){
-            $( '#link_prev').attr('href','/')
+            // $( '#link_prev').attr('href','/')
+            prevURL = '/'
         } else {
-            $( '#link_prev').attr('href',`/content/${currentPageCount-1}`)
+            prevURL = `/content/${currentPageCount-1}`
+            // $( '#link_prev').attr('href',`/content/${currentPageCount-1}`)
         }
     }
 
     // if any other pages in between
     if(!lastPage && !firstPage){
-        // if second page , previous should point to index.html outside content. main. 
+        // if second page , previous should point to index.html outside content. main. root
         if(currentPageCount == 1){
-            $( '#link_prev').attr('href',`/content/${currentPageCount-1}`)
+            // $( '#link_prev').attr('href',`/`)
+            prevURL = '/'
         } else {
-            $( '#link_prev').attr('href',`/content/${currentPageCount-1}`)
-            $( '#link_next').attr('href',`/content/${currentPageCount+1}`)
+            prevURL = `/content/${currentPageCount-1}`
+            nextURL = `/content/${currentPageCount+1}`
+            // $( '#link_prev').attr('href',`/content/${currentPageCount-1}`)
+            // $( '#link_next').attr('href',`/content/${currentPageCount+1}`)
         }
+    }
+
+    return {
+        prev : prevURL,
+        next : nextURL
     }
 }
 
