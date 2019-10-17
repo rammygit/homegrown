@@ -7,3 +7,7 @@ h2 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+
+html {
+    line-height: 1.75;
+}
