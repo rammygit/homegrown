@@ -77,15 +77,8 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR) {
 
     const frontMatter = matter(fileContent)
 
-    // "data":{"PageTitle":"Maven Profile Override","LinkTitle":"How to Override Maven Profiles","Date":"09/01/2019","Author":"Ramkumar"}
-    //console.log(`front matter => ${JSON.stringify(frontMatter)}`)
-
-    console.log(`parsed data => ${frontMatter.data.PageTitle}`)
-
     // jus get the filename without the extension. need to find a better way to do this. 
     const fileName = dirent.name.substring(0,dirent.name.length -3)
-
-
 
     //Calling fsPromises.mkdir() when path is a directory 
     //that exists results in a rejection only when recursive is false.
@@ -96,8 +89,6 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR) {
    // get the content from frontmatter object.
     // const htmlFile = await getPageHTMLContentToWrite(pretty(marked(fileContent)),PROJECT_DIR)
     const htmlFile = await getPageHTMLContentToWrite(pretty(marked(frontMatter.content)),PROJECT_DIR)
-
-    
 
     // create an index.html for every md file. with the filename as folder and index.html inside it.
     fsPromises.writeFile(`${TARGET_DIR}/content/${fileName}/index.html`,htmlFile,{flag:'w'}).catch(console.error);
@@ -116,17 +107,12 @@ const getPageHTMLContentToWrite = async (htmlContent,PROJECT_DIR) => {
 
 
     const pageHtmlContent = await fsPromises.readFile(`${PROJECT_DIR}/pages/post.html`,{encoding:'utf-8'})
-    //console.log(pageHtmlContent)
-    // console.log(htmlContent)
     const $= cheerio.load(pageHtmlContent)
     $('#page_content').empty()
     $(htmlContent).appendTo('#page_content')
-   // console.log('what is getting returned  => ',pretty($.html()))
     return pretty($.html())
 
 }
-
-
 
 module.exports = processContent
 
