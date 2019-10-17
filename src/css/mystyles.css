@@ -1,16 +1,20 @@
 h2 {
-    display: block;
-    /* font-size: 1.5em; */
-    /* margin-block-start: 0.83em;
-    margin-block-end: 0.83em; */
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+    
+    margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
+    
 }
 
-html {
-    line-height: 1.75;
+h4 {
+    
+    margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
+    
 }
+
+/* html {
+    line-height: 1.25;
+} */
 
 @media only screen and (max-width: 768px){
     .col {
@@ -24,4 +28,16 @@ html {
         flex: 0 0 27.33333%;
         max-width: 33.33333%;
     }
+}
+
+
+
+code {
+    /* background-color: #f2f2f2; */
+    background-color: #41403e;
+    border-radius: 3px;
+    /* color: #0071de; */
+    color: #fff;
+    font-size: 80%;
+    padding: 2px 4px;
 }
