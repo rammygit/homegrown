@@ -11,3 +11,17 @@ h2 {
 html {
     line-height: 1.75;
 }
+
+@media only screen and (max-width: 768px){
+    .col {
+        flex: 0 0 16%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .sm-4 {
+        flex: 0 0 27.33333%;
+        max-width: 33.33333%;
+    }
+}
