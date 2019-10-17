@@ -1,3 +1,8 @@
+---
+PageTitle: Some Blogs to follow
+Date: 10/05/2019
+Author: Ramkumar
+---
 Links to follow. Source for interesting articles.
 
 * [Vanilla Java](http://vanillajava.blogspot.com/)

@@ -1,3 +1,8 @@
+---
+PageTitle: How to write Linux ISO to USB Bootable drive
+Date: 10/01/2019
+Author: Ramkumar
+---
 
 # How to write Linux ISO to USB Bootable drive
 

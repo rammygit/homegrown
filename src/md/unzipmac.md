@@ -1,3 +1,8 @@
+---
+PageTitle: p7Zip - UnZip on Mac
+Date: 10/09/2019
+Author: Ramkumar
+---
 Install the p7zip from homebrew. 
 
 ```bash

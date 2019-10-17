@@ -1,3 +1,8 @@
+---
+PageTitle: Notes on Public Speaking
+Date: 09/01/2019
+Author: Ramkumar
+---
 ## public speaking 
 
 - **Anxiety control , everyone has anxiety.  either planned or spontaneous.**

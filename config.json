@@ -1,10 +1,10 @@
 {
-    "blogTitle":"Ram's Weblog",
-    "blogSubTitle": "powered by StaticFire - Simple Static site Generator",
+    "blogTitle":"StaticFire",
+    "blogSubTitle": "Static site Generator for Poor",
     "postPerPage": "5", 
-    "author":"Ram",
+    "author":"X",
     "social":{
-        "twitter":"",
+        "twitter":"staticfire1",
         "linkedIn":"",
         "github":""
     }

@@ -1,3 +1,8 @@
+---
+PageTitle: Intro to Kafka - Part 2
+Date: 10/01/2019
+Author: Ramkumar
+---
 ### Partition Allocation
 
 - When you create topic, kafka decides how the partitions are assigned between the brokers in cluster.

@@ -1,9 +1,7 @@
 ---
 PageTitle: Maven Profile Override
-LinkTitle: How to Override Maven Profiles
 Date: 09/01/2019
 Author: Ramkumar
-
 ---
 
 ## Maven Profile Override

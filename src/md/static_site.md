@@ -1,3 +1,8 @@
+---
+PageTitle: What about my static site Generator
+Date: 10/09/2019
+Author: Ramkumar
+---
 ## Static Site - Hand made  
 
 This is a quick hack to recreate what static site generator are doing in a highlevel. My take on this. Built using node.js. This is an opiniated in a good sense. Idea is get up and running within minutes and not to worry about the themes, look & feel and use html and less javascript get your blog site up. 

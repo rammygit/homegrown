@@ -1,3 +1,8 @@
+---
+PageTitle: What is Pass by Value in Java ?
+Date: 10/01/2019
+Author: Ramkumar
+---
 In Java everything is passed by value when you call a method. What does this mean is, when a method is called all its parameters are made a exact copy of the original and placed in the call stack and newly copied parameters are passed to the method.
 
 Life of these copied parameters are until the method is run. After which their life ends. 

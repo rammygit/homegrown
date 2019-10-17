@@ -1,3 +1,8 @@
+---
+PageTitle: Intro to Kafka - Part 1
+Date: 10/01/2019
+Author: Ramkumar
+---
 Distributed commit log or Distributed streaming platform(recently).
 
 ## Basic outline and Big Picture  

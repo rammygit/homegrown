@@ -1,3 +1,10 @@
+---
+PageTitle: Intro to Kubernetes
+Date: 10/01/2019
+Author: Ramkumar
+---
+
+
 **Credits Due :** this is **From: Nigel Poulton. “The Kubernetes Book.** and **Kubernetes in action** and **kubernetes up and running** book notes together. These 
 are recommended buys.
 
