@@ -1,7 +1,8 @@
 {
     "blogTitle":"StaticFire",
     "blogSubTitle": "Static site Generator for Poor",
-    "postPerPage": "5", 
+    "postPerPage": "5",
+    "showpreview":true, 
     "author":"X",
     "social":{
         "twitter":"staticfire1",

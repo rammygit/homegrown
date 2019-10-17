@@ -12,6 +12,11 @@ h4 {
     
 }
 
+div#content.sm-4.col.align-middle{
+
+    line-height: 1.75;
+}
+
 /* html {
     line-height: 1.25;
 } */
