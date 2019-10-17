@@ -5,13 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css-build": "node-sass --omit-source-map-url src/sass/mystyles.scss src/css/mystyle.css",
-    "css-watch": "npm run css-build -- --watch",
-    "clean-css": "cleancss -o src/css/mystyle.min.css src/css/mystyle.css && cleancss -o src/css/main.min.css src/css/main.css && cleancss -o src/css/normalize.min.css src/css/normalize.css",
-    "clean-css-skel": "cleancss -o src/css/main.min.css src/css/main.css && cleancss -o src/css/normalize.min.css src/css/normalize.css && cleancss -o src/css/skeleton.min.css src/css/skeleton.css",
-    "start": "npm install && npm run css-build && npm run clean-css && node build.js production",
-    "start-skel": "npm install && npm run clean-css && node build.js production",
-    "start-dev": "npm install && npm run css-build && node build.js dev"
+    "start": "npm install && node build.js production",
+    "start-dev": "npm install && node build.js dev"
   },
   "author": "",
   "license": "ISC",
