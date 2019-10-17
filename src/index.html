@@ -6,7 +6,7 @@
     <title></title>
     <meta name="description" content>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="apple-touch-icon" href="/icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -14,82 +14,50 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"> -->
     <link href="/fontawesome-free-5.10.0/css/all.min.css" rel="stylesheet">
     <!--load all styles -->
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/main.min.css">
-    <link rel="stylesheet" href="/css/mystyle.min.css">
-    
-    
+    <!-- <link rel="stylesheet" href="/css/normalize.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/main.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/skeleton.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/mystyle.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.css">
+
+
+
 
     <meta name="theme-color" content="#fafafa">
   </head>
 
   <body>
-    <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+      <!-- <div class="row"> -->
+        <div class="row flex-edges">
+          <div class="sm-12 col">
+              <h2 id="h_blogTitle">Ram&apos;s Weblog</h2>
+              <h4 id="h_blogSubTitle">powered by StaticFire - Simple Static site Generator</h4>
+          </div>
+        </div>
+      <!-- </div> -->
 
-    <nav class="level">
-      <!-- left side  -->
-      <div class="level-left">
 
-        <section class="hero">
-            <div class="hero-body">
-              <div class="container">
-                <h1 id="h_blogTitle" class="title">
-                  Hero title
-                </h1>
-                <h2 id="h_blogSubTitle" class="subtitle">
-                  Hero subtitle
-                </h2>
-              </div>
-            </div>
-          </section>
+      <div class="row">
+          <div class="sm-4"></div>
+          <div id="content" class="sm-4 col align-middle">
+          </div>
+          <div class="sm-4"></div>
       </div>
 
-      <!-- right side -->
-      <!-- <div class="level-right">
-        <p class="panel-tabs">
-          <a href="/content/about/" class="is-active is-light">
-            <span class="icon has-text-info">
-                <i class="fas fa-user"></i> 
-              </span>
-            About Me
-          </a>
-          <a href="/" class="is-active is-light">
-            <span class="icon has-text-primary">
-                <i class="fas fa-book"></i>
-              </span>
-            Articles
-          </a>
-          <a class="is-active is-light">
-              <span class="icon has-text-danger">
-                  <i class="fas fa-bookmark"></i>
-              </span>
-            Bookmarks
-          </a>
-        </p>
-      </div> -->
-    </nav>
 
 
-
-    <!-- content of the list of links for the site goes here  -->
-    <section>
-      <div id="content" class="content has-text-centered"></div>
-    </section>
-
-    <div class="columns is-mobile">
-        <div class="column is-12 is-offset-1"></div>
-      </div>
-
-    <div class="field is-grouped is-grouped-centered">
-        <p class="control">
-            <a id="link_prev" href="#" class=" button is-primary"><i class="fas fa-angle-double-left"></i> </a>
-        </p>
-        <p class="control">
-            <a id="link_next" href="#" class="button is-primary"> <i class="fas fa-angle-double-right"></i></i> </a>
-        </p>
-      </div>
+    <div class="row">
+        <div class="sm-4 col"></div>
+        <div class="sm-4 col align-right">
+            <a id="link_prev" href="/" class=" button is-primary"><i class="fas fa-angle-double-left"></i> </a>
+        </div>
+        <div class="sm-4 col align-left">
+            <a id="link_next" href="/content/1" class="button is-primary"> <i class="fas fa-angle-double-right"></i> </a>
+        </div>
+        <div class="sm-4 col"></div>
+    </div>
+    
 
     <script defer src="/js/vendor/modernizr-3.7.1.min.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -124,6 +92,8 @@
         </p>
       </div>
     </footer> -->
+
+
 
 
 
