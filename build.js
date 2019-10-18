@@ -80,7 +80,7 @@ const start = async _ => {
     const $= cheerio.load(mainIndexFileContent)
 
     // let htmls = await readDirectory(PROJECT_PATH+'md/')
-    let htmls = await processContent(`${PROJECT_PATH}/md/`,TARGET_DIR,PROJECT_PATH)
+    let htmls = await processContent(`${PROJECT_PATH}/md/`,TARGET_DIR,PROJECT_PATH,property)
   
     // this will add pagination pbased on the strings.json file where postPerPage is used.
     const paginatedHTMLs = await paginate($,property,htmls,TARGET_DIR)

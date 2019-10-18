@@ -29,7 +29,7 @@ marked.setOptions({
    * used for content/markdown processing.
    * @param {*} basePath 
    */
-  const processContent = async function (basePath,TARGET_DIR,PROJECT_DIR) {
+  const processContent = async function (basePath,TARGET_DIR,PROJECT_DIR,property) {
 
     let appendHTMLs = []
 
@@ -48,7 +48,7 @@ marked.setOptions({
             if (file_ext === '.html' || file_ext === '.js' || file_ext === '.css' || file_ext === '.md') {
                 if(FILE_IGNORE.indexOf (dirent.name ) == -1) {
 
-                    let appendHTML = await process(basePath, dirent,TARGET_DIR,PROJECT_DIR)
+                    let appendHTML = await process(basePath, dirent,TARGET_DIR,PROJECT_DIR,property)
                     appendHTMLs.push(appendHTML)
                 } 
             } 
@@ -69,7 +69,7 @@ marked.setOptions({
  * @param {*} basePath 
  * @param {*} dirent 
  */
-const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR) {
+const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR,property) {
 
     
     //read the md 
@@ -88,14 +88,26 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR) {
    //TODO: remove pretty here.
    // get the content from frontmatter object.
     // const htmlFile = await getPageHTMLContentToWrite(pretty(marked(fileContent)),PROJECT_DIR)
-    const htmlFile = await getPageHTMLContentToWrite(pretty(marked(frontMatter.content)),PROJECT_DIR)
+    const markdownedContent = marked(frontMatter.content)
+    const htmlFile = await getPageHTMLContentToWrite(pretty(markdownedContent),PROJECT_DIR)
 
     // create an index.html for every md file. with the filename as folder and index.html inside it.
     fsPromises.writeFile(`${TARGET_DIR}/content/${fileName}/index.html`,htmlFile,{flag:'w'}).catch(console.error);
 
     const linkTitle = (frontMatter.data.PageTitle)?frontMatter.data.PageTitle:fileName
     
-    return `<a href="/content/${fileName}/">${linkTitle}</a></br>`  
+    return (property.showpreview)?`<a href="/content/${fileName}/">${linkTitle}</a></br>
+                                    <p>${getPreviewForContent(markdownedContent)}</p></br>`
+        :`<a href="/content/${fileName}/">${linkTitle}</a></br>`  
+}
+
+/**
+ * 
+ * @param {*} content 
+ */
+const getPreviewForContent = (content) => {
+
+    return content.split('\n',1)[0]
 }
 
 /**
