@@ -6,4 +6,9 @@ Intent is to have the end-user checkout and run a command `npm start` ( yes I am
 
 Local developer setup is something that interests me. Current static site generators largely ignore them. 
 
+Project is largely in development. With lot of features I plan to add. Top 2 items 
+
+1. Search 
+2. Themes as branch
+
 
