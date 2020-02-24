@@ -41,6 +41,10 @@ Author: Ramkumar
 - one way = item,parent,children stored in a list
 - another option = siblings are directly connected. 
 
+
+<img src="https://i.ibb.co/tpk6wnm/tree1.png" alt="tree1" border="0">
+
+
 ```
 class Node{
 
