@@ -12,3 +12,8 @@ Project is largely in development. With lot of features I plan to add. Top 2 ite
 2. Themes as branch
 
 
+### For Developers
+
+You start at build.js
+
+
