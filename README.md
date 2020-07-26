@@ -16,4 +16,5 @@ Project is largely in development. With lot of features I plan to add. Top 2 ite
 
 You start at build.js
 
+You can see this in action @ [staticfire.site](https://www.staticfire.site)
 
