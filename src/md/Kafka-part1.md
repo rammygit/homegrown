@@ -7,7 +7,7 @@ Distributed commit log or Distributed streaming platform(recently).
 
 ## Basic outline and Big Picture  
 
-    
+ [Read this for message concepts](https://medium.com/@madhur25/meaning-of-at-least-once-at-most-once-and-exactly-once-delivery-10e477fafe16)
     
 ![Image of Kafka General](/img/kafka_general_new.png)
 
