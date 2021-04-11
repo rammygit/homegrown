@@ -10,7 +10,7 @@ I will update as I find time.
 
 ## Azure Disk Caching 
 
-![AzureDiskCaching](/img/azure/AzureDiskCaching.png)
+![AzureDiskCaching](/img/azure/AzureDisksCaching.png)
 
 Azure Disks are standalone resource. They have few types -- 
 
