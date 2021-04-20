@@ -8,11 +8,11 @@
 
 a {
     text-decoration: none;
-    color: rgb(61, 146, 201);
+    color: rgb(85, 101, 111);
 }
 a:hover,
 a:focus {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 h3 {

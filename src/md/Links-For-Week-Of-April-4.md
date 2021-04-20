@@ -1,3 +1,8 @@
+---
+PageTitle: Links for the Week for April 4 2020
+Date: 04/01/2020
+Author: Ramkumar    
+---
 ## Some Interesting Hacker News Stories
 
 ### Trimming Videos without Reencoding. 
