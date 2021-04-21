@@ -4,7 +4,6 @@ Date: 09/01/2019
 Author: Ramkumar
 ---
 
-## Maven Profile Override
 
 Recently I came across this use case where we have a parent pom and child project which points to the parent POM in its pom.xml. We all assume the obvious here, that you should be able to override anything defined in the parent POM. But it turns out that it is the not the case. 
 
