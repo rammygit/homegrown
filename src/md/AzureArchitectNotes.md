@@ -4,11 +4,7 @@ Date: 04/05/2021
 Author: Ramkumar
 ---
 
-Draft -- 
-
-
-
-I will update as I find time. 
+Draft -- This post will have periodic updates
 
 ## Azure Disk Caching 
 
