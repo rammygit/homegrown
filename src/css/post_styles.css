@@ -41,7 +41,7 @@ The content `<div>` is where all your content goes.
 */
 .content {
     margin: 0 auto;
-    padding: 0 2em;
+    /* padding: 0 2em; */
     max-width: 800px;
     margin-bottom: 50px;
     line-height: 1.6em;
@@ -247,8 +247,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
     .content {
-        padding: 2em 3em 0;
-        margin-left: 30%;
+        /* padding: 2em 3em 0; */
+        margin-left: 10%;
     }
 
     img{
