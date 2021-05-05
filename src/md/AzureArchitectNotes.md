@@ -62,7 +62,15 @@ This type of cache setup supports services reading from it , but writing directl
 - It all happens within Azure 
 
 
+## High Available VMs
 
+- Unplanned & Planned Outages are to be protected 
+    - Maintainance - planned.
+    - Scheduled in advanced - Planned. 
+    - Hardware or Software failure - Unplanned.
+    - No Notice - Unplanned 
+
+- 
 
 
 

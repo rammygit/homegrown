@@ -40,7 +40,9 @@
 
             <div class="posts">
                 <h1 class="content-subhead">Recent Posts</h1>
-
+                <div id="div_colorswitch" class="color-switch">
+                    <div class="switch"></div>
+                  </div>
                 <section class="post">
                     <header class="post-header">
                         <!-- <img width="48" height="48" alt="Eric Ferraiuolo&#x27;s avatar" class="post-avatar" src="/img/common/ericf-avatar.png"> -->
@@ -131,6 +133,24 @@
         </div>
     </div>
 </div>
+<script>
 
+    if(localStorage.getItem('isDark') === 'true') {
+        document.querySelector('body').classList.add("dark-theme");
+    } else {
+        document.querySelector('body').classList.remove("dark-theme");
+    }
+        
+    
+    
+    const btn = document.getElementById('div_colorswitch');
+    
+    btn.addEventListener('click', (event) => {
+        const isDark = document.querySelector('body').classList.toggle("dark-theme");
+        
+        localStorage.setItem('isDark',isDark)
+    });
+
+    </script>
 </body>
 </html>

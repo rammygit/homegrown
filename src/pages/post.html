@@ -27,6 +27,14 @@
 </div>
 
 <!-- <script src="/js/ui.js"></script> -->
+<script>
+    if(localStorage.getItem('isDark') === 'true') {
+        document.querySelector('body').classList.add("dark-theme");
+    } else {
+        document.querySelector('body').classList.remove("dark-theme");
+    }
+    
 
+    </script>
 </body>
 </html>

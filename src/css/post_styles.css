@@ -261,3 +261,55 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 img{
     width: 500px;
 }
+
+/* dark mode  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+        :root {
+            --background: #FFF;
+            --text: #000;
+            --highlight: #ff6564;
+       }
+       
+        .color-switch {
+            --background: #fff;
+            --text: #000;
+            color: var(--text);
+            width: 70px;
+            height: 30px;
+            background: var(--highlight);
+            border-radius: 50px;
+            position: relative;
+          cursor: pointer;
+       }
+        .color-switch .switch {
+            background: white;
+            width: 24px;
+            height: 24px;
+            background: var(--background);
+            border-radius: 100%;
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            transition: 0.5s all ease;
+       }
+        .dark-theme {
+            --background: #000;
+            --text: #FFF;
+          --highlight: #ff6564;
+            background: var(--background);
+       }
+        .dark-theme .color-switch {
+            background: var(--highlight);
+       }
+        .dark-theme .color-switch .switch {
+            transform: translateX(37px);
+       }
+        .dark-theme a {
+            color: var(--text);
+       }
+        .navigation {
+            display: flex;
+            justify-content: center;
+       }
