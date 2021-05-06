@@ -272,7 +272,7 @@ h3 {
             display: flex;
             justify-content: center;
        }
-        ul {
+        /* ul {
             display: flex;
             list-style-type: none;
        }
@@ -305,4 +305,4 @@ h3 {
        }
         ul .active:hover:before {
             opacity: 0;
-       }
+       } */
