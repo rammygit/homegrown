@@ -299,7 +299,7 @@ img{
        }
         .dark-theme {
             --background: #010221;
-            --text: #FFF;
+            --text: #c6c6ca;
           --highlight: #ff6564;
             background: var(--background);
             color: var(--text);

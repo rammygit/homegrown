@@ -263,7 +263,7 @@ svg {
        }
         .dark-theme {
             --background: #010221;
-            --text: #FFF;
+            --text: #c6c6ca;
           --highlight: #ff6564;
             background: var(--background);
        }
@@ -275,6 +275,9 @@ svg {
        }
         .dark-theme a {
             color: var(--text);
+       }
+       .dark-theme img {
+            mix-blend-mode: difference;
        }
         .navigation {
             display: flex;
