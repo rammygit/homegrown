@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+
 body {
     color: #777;
+    font-family: "Recursive","Helvetica", "Arial", sans-serif;
 }
 
 .pure-img-responsive {
@@ -264,7 +267,7 @@ img{
 
 /* dark mode  */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); */
 
         :root {
             --background: #FFF;
@@ -295,10 +298,11 @@ img{
             transition: 0.5s all ease;
        }
         .dark-theme {
-            --background: #000;
+            --background: #010221;
             --text: #FFF;
           --highlight: #ff6564;
             background: var(--background);
+            color: var(--text);
        }
         .dark-theme .color-switch {
             background: var(--highlight);
@@ -306,8 +310,13 @@ img{
         .dark-theme .color-switch .switch {
             transform: translateX(37px);
        }
+       
         .dark-theme a {
             color: var(--text);
+       }
+       .dark-theme .header {
+
+        color: var(--text);
        }
         .navigation {
             display: flex;
