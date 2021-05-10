@@ -157,16 +157,27 @@ h3 {
 }
 
 .footer {
+    --min: 15ch;
+    --gap: 1rem;
+  
+    display: grid;
+    grid-gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
     padding: 1em 0;
-}
+  }
+
+
 .footer a {
     /* color: #ccc; */
     font-size: 100%;
 }
-/* .footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-    background: none;
-} */
+
+svg {
+        position: relative;
+        /* Adjust these values accordingly */
+        top: 5px;
+        /* left: 5px; */
+}
 
 @media (min-width: 48em) {
     .content {
