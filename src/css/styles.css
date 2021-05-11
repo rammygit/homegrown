@@ -243,17 +243,20 @@ svg {
             --background: #fff;
             --text: #000;
             color: var(--text);
-            width: 70px;
-            height: 30px;
+            width: 50px;
+            /* width: 70px; */
+            height: 28px;
+            /* height: 30px; */
             background: var(--highlight);
-            border-radius: 50px;
+            border-radius: 30px;
+            /* border-radius: 50px; */
             position: relative;
           cursor: pointer;
        }
         .color-switch .switch {
             background: white;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             background: var(--background);
             border-radius: 100%;
             position: absolute;
@@ -271,7 +274,7 @@ svg {
             background: var(--highlight);
        }
         .dark-theme .color-switch .switch {
-            transform: translateX(37px);
+            transform: translateX(23px);
        }
         .dark-theme a {
             color: var(--text);
