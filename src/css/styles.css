@@ -238,6 +238,18 @@ svg {
             --text: #000;
             --highlight: #ff6564;
        }
+
+       #mode_div{
+           display:flex;
+       }
+
+       .switch_sun{
+           float: left;
+       }
+
+       .switch_moon{
+        float: right;
+    }
         
         .color-switch {
             --background: #fff;
