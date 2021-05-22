@@ -1,6 +1,6 @@
 ---
 PageTitle: Mocking REST API
-Date: 2017-06-10 10:00 pm
+Date: 06/10/2017
 ---
 
 Date - 06/10/2017

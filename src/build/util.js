@@ -27,6 +27,10 @@ marked.setOptions({
 /**
    * it will only read the basepath passed to it for processing.
    * used for content/markdown processing.
+   * 
+   * basepath is /md directory
+   * targetdirectory is 'public' dir
+   * 
    * @param {*} basePath 
    */
   const processContent = async function (basePath,TARGET_DIR,PROJECT_DIR,property) {

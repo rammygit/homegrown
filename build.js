@@ -73,6 +73,8 @@ const start = async _ => {
 
     // delete the unneeded md directory
     await fsExtra.remove(`${TARGET_DIR}/md`)
+
+    console.log('removed md dir in target')
     // remove the md folder 
     
     const mainIndexFileContent = await fsPromises.readFile(`${PROJECT_PATH}/index.html`,{encoding:'utf-8'})
@@ -80,8 +82,13 @@ const start = async _ => {
     const $= cheerio.load(mainIndexFileContent)
 
     // let htmls = await readDirectory(PROJECT_PATH+'md/')
+    //calls in util.js
     let htmlsObject = await processContent(`${PROJECT_PATH}/md/`,TARGET_DIR,PROJECT_PATH,property)
   
+    htmlsObject.sort((a, b) => new Date(b.contentDate) - new Date(a.contentDate))
+
+    console.log(`html object = ${JSON.stringify(htmlsObject,null, 2)}`)
+
     // this will add pagination pbased on the strings.json file where postPerPage is used.
     const paginatedHTMLs = await paginate($,property,htmlsObject,TARGET_DIR)
 

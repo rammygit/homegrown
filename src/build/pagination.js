@@ -35,12 +35,10 @@ const getHTMLWithPagination = async function($,property,htmlsObject,TARGET_DIR){
         $( '#link_next').attr('href',navObj['next'])
 
 
-        htmlsObject.sort((a, b) => b.contentDate - a.contentDate)
-        
         //splice will modify array in place. this is also modifyin the original array in the first place. 
         // i need to make  it immutable just in case if we need the original reference later. 
-        htmlsObject.splice(0,postPerPage).forEach(html => {
-            $(html).appendTo('#content')
+        htmlsObject.splice(0,postPerPage).forEach(htmlObj => {
+            $(htmlObj.indexLink).appendTo('#content')
         });
 
         // change the the text of the title of the site based from the config.json
