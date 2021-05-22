@@ -291,6 +291,9 @@ svg {
         .dark-theme a {
             color: var(--text);
        }
+       .dark-theme div {
+        color: var(--text);
+   }
        .dark-theme img {
             mix-blend-mode: difference;
        }
