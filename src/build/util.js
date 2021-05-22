@@ -27,6 +27,10 @@ marked.setOptions({
 /**
    * it will only read the basepath passed to it for processing.
    * used for content/markdown processing.
+   * 
+   * basepath is /md directory
+   * targetdirectory is 'public' dir
+   * 
    * @param {*} basePath 
    */
   const processContent = async function (basePath,TARGET_DIR,PROJECT_DIR,property) {
@@ -75,7 +79,7 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR,property
     //read the md 
     const fileContent =  await fsPromises.readFile(basePath+dirent.name,{encoding:'utf-8'})
 
-    const frontMatter = matter(fileContent)
+    const frontMatter = await matter(fileContent)
 
     // jus get the filename without the extension. need to find a better way to do this. 
     const fileName = dirent.name.substring(0,dirent.name.length -3)
@@ -89,16 +93,27 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR,property
    // get the content from frontmatter object.
     // const htmlFile = await getPageHTMLContentToWrite(pretty(marked(fileContent)),PROJECT_DIR)
     const markdownedContent = marked(frontMatter.content)
-    const htmlFile = await getPageHTMLContentToWrite(pretty(markdownedContent),PROJECT_DIR)
+    const htmlFile = await getPageHTMLContentToWrite(frontMatter,pretty(markdownedContent),PROJECT_DIR)
 
     // create an index.html for every md file. with the filename as folder and index.html inside it.
     fsPromises.writeFile(`${TARGET_DIR}/content/${fileName}/index.html`,htmlFile,{flag:'w'}).catch(console.error);
 
     const linkTitle = (frontMatter.data.PageTitle)?frontMatter.data.PageTitle:fileName
     
-    return (property.showpreview)?`<a href="/content/${fileName}/">${linkTitle}</a></br>
+    const returnPrintObject = {}
+
+    returnPrintObject.indexLink =  `<div>${frontMatter.data.Date}</div>`.concat((property.showpreview)?` <a href="/content/${fileName}/">${linkTitle}</a></br>
                                     <p>${getPreviewForContent(markdownedContent)}</p></br>`
-        :`<a href="/content/${fileName}/">${linkTitle}</a></br>`  
+        :` <a href="/content/${fileName}/" class="pure-menu-link">${linkTitle}</a></br>`) 
+    
+        returnPrintObject.contentDate = frontMatter.data.Date
+
+
+        return returnPrintObject;
+
+    // return (property.showpreview)?`<a href="/content/${fileName}/">${linkTitle}</a></br>
+    //                                 <p>${getPreviewForContent(markdownedContent)}</p></br>`
+    //     :`<a href="/content/${fileName}/" class="pure-menu-link">${linkTitle}</a></br>`  
 }
 
 /**
@@ -115,12 +130,15 @@ const getPreviewForContent = (content) => {
  * @param {*} htmlContent 
  * @param {*} PROJECT_DIR 
  */
-const getPageHTMLContentToWrite = async (htmlContent,PROJECT_DIR) => {
+const getPageHTMLContentToWrite = async (frontMatter,htmlContent,PROJECT_DIR) => {
 
 
     const pageHtmlContent = await fsPromises.readFile(`${PROJECT_DIR}/pages/post.html`,{encoding:'utf-8'})
     const $= cheerio.load(pageHtmlContent)
     $('#page_content').empty()
+    const title = (frontMatter.data.PageTitle)?frontMatter.data.PageTitle:'missing page title'
+    $('#page_title').text(title)
+    $('#page_subtitle').text((frontMatter.data.PageSubTitle)?frontMatter.data.PageSubTitle:'')
     $(htmlContent).appendTo('#page_content')
     return pretty($.html())
 

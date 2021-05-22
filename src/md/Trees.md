@@ -4,7 +4,7 @@ Date: 12/21/2018
 Author: Ramkumar
 ---
 
-## __Trees and Traversals__
+
 
 #  Define Rules.
 

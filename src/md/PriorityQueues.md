@@ -1,5 +1,8 @@
-# Priority Queues
-
+---
+PageTitle: Priority Queues
+Date: 09/01/2019
+Author: Ramkumar
+---
 
 - Bit like dictionary.
 - Entries with key and value. 

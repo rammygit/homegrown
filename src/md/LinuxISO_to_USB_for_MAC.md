@@ -4,7 +4,6 @@ Date: 10/01/2019
 Author: Ramkumar
 ---
 
-# How to write Linux ISO to USB Bootable drive
 
 Basically these list of commands will do in mac.
 

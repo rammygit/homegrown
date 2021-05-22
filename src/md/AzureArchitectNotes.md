@@ -4,11 +4,7 @@ Date: 04/05/2021
 Author: Ramkumar
 ---
 
-Draft -- 
-
-
-
-I will update as I find time. 
+Draft -- This post will have periodic updates
 
 ## Azure Disk Caching 
 
@@ -66,7 +62,15 @@ This type of cache setup supports services reading from it , but writing directl
 - It all happens within Azure 
 
 
+## High Available VMs
 
+- Unplanned & Planned Outages are to be protected 
+    - Maintainance - planned.
+    - Scheduled in advanced - Planned. 
+    - Hardware or Software failure - Unplanned.
+    - No Notice - Unplanned 
+
+- 
 
 
 
