@@ -96,9 +96,20 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR,property
 
     const linkTitle = (frontMatter.data.PageTitle)?frontMatter.data.PageTitle:fileName
     
-    return (property.showpreview)?`<a href="/content/${fileName}/">${linkTitle}</a></br>
+    const returnPrintObject = {}
+
+    returnPrintObject.indexLink =  (property.showpreview)?`<a href="/content/${fileName}/">${linkTitle}</a></br>
                                     <p>${getPreviewForContent(markdownedContent)}</p></br>`
         :`<a href="/content/${fileName}/" class="pure-menu-link">${linkTitle}</a></br>`  
+    
+        returnPrintObject.contentDate = frontMatter.data.Date
+
+
+        return returnPrintObject;
+
+    // return (property.showpreview)?`<a href="/content/${fileName}/">${linkTitle}</a></br>
+    //                                 <p>${getPreviewForContent(markdownedContent)}</p></br>`
+    //     :`<a href="/content/${fileName}/" class="pure-menu-link">${linkTitle}</a></br>`  
 }
 
 /**

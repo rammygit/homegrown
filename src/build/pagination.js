@@ -8,13 +8,13 @@ const pretty = require('pretty')
  * updated version for the paginate method. 
  * @param {*} $ 
  * @param {*} property 
- * @param {*} htmls 
+ * @param {*} htmlsObject 
  * @param {*} TARGET_DIR 
  */
-const getHTMLWithPagination = async function($,property,htmls,TARGET_DIR){
+const getHTMLWithPagination = async function($,property,htmlsObject,TARGET_DIR){
     // let page = 1
     let postPerPage = property.postPerPage
-    let totalPosts = htmls.length
+    let totalPosts = htmlsObject.length
     let totalPageCount = Math.ceil(totalPosts/postPerPage);
     let paginatedHTMLs = []
 
@@ -29,15 +29,17 @@ const getHTMLWithPagination = async function($,property,htmls,TARGET_DIR){
 
         $('#content').empty()
         
-        const navObj = constructNavURL(htmls,totalPosts,postPerPage,currentPageCount)
+        const navObj = constructNavURL(htmlsObject,totalPosts,postPerPage,currentPageCount)
 
         $( '#link_prev').attr('href',navObj['prev'])
         $( '#link_next').attr('href',navObj['next'])
 
+
+        htmlsObject.sort((a, b) => b.contentDate - a.contentDate)
         
         //splice will modify array in place. this is also modifyin the original array in the first place. 
         // i need to make  it immutable just in case if we need the original reference later. 
-        htmls.splice(0,postPerPage).forEach(html => {
+        htmlsObject.splice(0,postPerPage).forEach(html => {
             $(html).appendTo('#content')
         });
 
@@ -56,15 +58,15 @@ const getHTMLWithPagination = async function($,property,htmls,TARGET_DIR){
 
 /**
  * 
- * @param {*} htmls 
+ * @param {*} htmlsObject 
  * @param {*} totalPosts 
  * @param {*} postPerPage 
  * @param {*} currentPageCount 
  */
-const constructNavURL = (htmls,totalPosts,postPerPage,currentPageCount) => {
+const constructNavURL = (htmlsObject,totalPosts,postPerPage,currentPageCount) => {
     let [firstPage,lastPage] = [false,false]
     let [prevURL,nextURL] = ['','']
-    if(htmls.length === totalPosts){
+    if(htmlsObject.length === totalPosts){
         firstPage = true
         prevURL = '/'
         nextURL = `/content/${currentPageCount+1}`
@@ -72,7 +74,7 @@ const constructNavURL = (htmls,totalPosts,postPerPage,currentPageCount) => {
 
     // if the length of htmls is less than postperpage then it is the last page. 
     // arr index starts at 0 so less than.
-    if(htmls.length <= postPerPage){
+    if(htmlsObject.length <= postPerPage){
         lastPage = true
         nextURL = '#'
         //  usecase = if there are only 2 pages. 
