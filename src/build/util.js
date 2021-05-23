@@ -7,6 +7,7 @@ const marked = require('marked');
 const FILE_IGNORE = ['.gitignore','server.js','server_new.js','package-lock.json','package.json']
 const cheerio = require('cheerio')
 const matter = require('gray-matter');
+const dayjs = require('dayjs')
 
 // Set options
 // `highlight` example uses `highlight.js`
@@ -102,9 +103,12 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR,property
     
     const returnPrintObject = {}
 
-    returnPrintObject.indexLink =  `<div>${frontMatter.data.Date}</div>`.concat((property.showpreview)?` <a href="/content/${fileName}/">${linkTitle}</a></br>
-                                    <p>${getPreviewForContent(markdownedContent)}</p></br>`
-        :` <a href="/content/${fileName}/" class="pure-menu-link">${linkTitle}</a></br>`) 
+    // dayjs(frontMatter.data.Date).format('MMMM DD YYYY')
+    returnPrintObject.indexLink =  `<div id="link_div">
+                                    <div class="one">${dayjs(frontMatter.data.Date).format('MMMM DD YYYY')}</div> `.concat((property.showpreview)?
+                                        ` <div class="two"><a href="/content/${fileName}/">${linkTitle}</a></div></div></br>
+                                           <p>${getPreviewForContent(markdownedContent)}</p></br>`
+                                    :`  <div class="three"><a href="/content/${fileName}/" class="pure-menu-link">${linkTitle}</a></div></div></br>`) 
     
         returnPrintObject.contentDate = frontMatter.data.Date
 

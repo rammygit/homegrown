@@ -16,6 +16,7 @@
     "chokidar": "^3.0.2",
     "clean-css": "^4.2.1",
     "clean-css-cli": "^4.3.0",
+    "dayjs": "^1.10.4",
     "express": "^4.17.1",
     "fs-extra": "^8.1.0",
     "gray-matter": "^4.0.2",

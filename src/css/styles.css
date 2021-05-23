@@ -243,6 +243,22 @@ svg {
            display:flex;
        }
 
+       .one {
+        flex: 0.5 1 0;
+      }
+
+      .two {
+        flex: 1 1 0;
+      }
+
+      .three {
+        flex: 1 1 0;
+      }
+
+       #link_div {
+           display: flex;
+       }
+
        .switch_sun{
            float: left;
        }
