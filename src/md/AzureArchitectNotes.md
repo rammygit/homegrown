@@ -1,5 +1,5 @@
 ---
-PageTitle: Azure Architect Notes
+PageTitle: Random Architect Notes
 Date: 04/05/2021
 Author: Ramkumar
 ---
@@ -70,7 +70,21 @@ This type of cache setup supports services reading from it , but writing directl
     - Hardware or Software failure - Unplanned.
     - No Notice - Unplanned 
 
-- 
+
+**Point of Presence** provided by public cloud. 
+
+**Always build for performance**
+
+- Do things asychoronizly
+- Optimze for performance. Avoid chatty communications component
+
+
+**Legacy Application**
+
+
+**Hybrid Cloud**
+
+![Hybrid cloud Images](/img/hybridcloud.png)
 
 
 

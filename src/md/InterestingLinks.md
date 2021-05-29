@@ -13,4 +13,7 @@ Found this code pen helpful and to the point. It was no fluff and gets the idea 
 - [Unified Event Driven Architecture](https://thenewstack.io/unified-event-driven-architecture-for-the-cloud-native-enterprise/)
 
 
-
+- [Bartosz Ciechanowski](https://ciechanow.ski)
+- [Martin Kleppmann](https://martin.kleppmann.com/archive.html)
+- [Julia Evans](https://jvns.ca)
+- 
