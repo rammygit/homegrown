@@ -88,4 +88,33 @@ This type of cache setup supports services reading from it , but writing directl
 
 
 
+**Best Practices For Cloud**
+
+- Centralized Logging. 
+- Distributed Tracing like `Jaeger` 
+- API Gateways - configured for sticky sessions for Websockets if needed like `Ambassador`
+- Backend for Front End. BFF 
+- DevOps First
+- Monitoring - Prometheus
+- Distributed Caching
+
+
+## Some Cloud Patterns I found useful in the past
+
+**Data Patterns** in cloud 
+
+![datapattern](/img/Datapattern.png)
+
+**ImplementationPattern** useful for execution 
+
+![ImplementationPattern](/img/Implementation_pattern.png)
+
+**ResiliencyPattern** for failure handling
+
+![Resiliencypattern](/img/Resiliency_patterns.png)
+
+
+
+
+
 
