@@ -18,3 +18,4 @@ Links to follow. Source for interesting articles.
 * [mechanical symphony](http://mechanical-sympathy.blogspot.com/) 
 * [noblogdeffound](http://www.nurkiewicz.com/) 
 * [paul graham articles](http://paulgraham.com/articles.html) 
+* [Dennis Ritchie Home Page](https://www.bell-labs.com/usr/dmr/www/)
