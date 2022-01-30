@@ -3,7 +3,7 @@
 const fsPromises = require('fs').promises;
 const path = require('path')
 const pretty = require('pretty')
-const marked = require('marked');
+const { marked } = require('marked');
 const FILE_IGNORE = ['.gitignore','server.js','server_new.js','package-lock.json','package.json']
 const cheerio = require('cheerio')
 const matter = require('gray-matter');
@@ -93,7 +93,7 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR,property
    //TODO: remove pretty here.
    // get the content from frontmatter object.
     // const htmlFile = await getPageHTMLContentToWrite(pretty(marked(fileContent)),PROJECT_DIR)
-    const markdownedContent = marked(frontMatter.content)
+    const markdownedContent = marked.parse(frontMatter.content)
     const htmlFile = await getPageHTMLContentToWrite(frontMatter,pretty(markdownedContent),PROJECT_DIR)
 
     // create an index.html for every md file. with the filename as folder and index.html inside it.
