@@ -31,6 +31,22 @@ But this is my dependencies look like. Marked is a good markdown convertor to ht
 
 ```
 
+
+## Updated package.json 
+
+Updated package json on 01/30/2022 
+
+```json
+ "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "fs-extra": "^8.1.0",
+    "highlight.js": "^11.4.0",
+    "marked": ">=4.0.10",
+    "pretty": "^2.0.0",
+  }
+
+```
+
 ### Local Setup 
 
 - Prerequisite have python version 2.7 , for running your local webserver. There are varied options you can chose them, upto your preference. 
