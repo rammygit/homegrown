@@ -8,6 +8,6 @@ When it comes to distributed systems, replication is way of life. Options you ch
 
 I added a quick picture for DB replication, many are aware of this. 
 
-
-![DBReplication](https://imgur.com/a/VsmfOK8)
+![DBReplication](/img/DB-Replication.svg)
+<!-- ![DBReplication](https://imgur.com/a/VsmfOK8) -->
 
