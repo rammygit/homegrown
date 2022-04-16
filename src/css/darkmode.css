@@ -1,0 +1,46 @@
+.color-switch {
+    --background: #fff;
+    --text: rgb(75, 64, 64);
+    color: var(--text);
+    width: 50px;
+    /* width: 70px; */
+    height: 28px;
+    /* height: 30px; */
+    background: var(--highlight);
+    border-radius: 30px;
+    /* border-radius: 50px; */
+    position: relative;
+  cursor: pointer;
+}
+.color-switch .switch {
+    background: white;
+    width: 20px;
+    height: 20px;
+    background: var(--background);
+    border-radius: 100%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.5s all ease;
+}
+.dark-theme {
+    --background: #010221;
+    --text: #c6c6ca;
+  --highlight: #4d4a4a;
+    background: var(--background);
+}
+.dark-theme .color-switch {
+    background: var(--highlight);
+}
+.dark-theme .color-switch .switch {
+    transform: translateX(23px);
+}
+.dark-theme a {
+    color: var(--text);
+}
+.dark-theme div {
+color: var(--text);
+}
+.dark-theme img {
+    mix-blend-mode: difference;
+}

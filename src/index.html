@@ -1,108 +1,92 @@
 <!doctype html>
 <html lang="en" class="no-js">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A developer friendly static site generator built using Node.js">
-    <title>StaticFire- Static Site Generator</title>
-    <!-- <link rel="stylesheet" href="/css/pure/pure-min.css">
-    <link rel="stylesheet" href="/css/pure/grids-responsive-min.css"> -->
-    
-    <!-- <link rel="stylesheet" href="/css/pure-min.css"> -->
-    <link rel="stylesheet" href="/css/grids-responsive-min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/vendor/feather.min.js"></script>
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A developer friendly static site generator built using Node.js">
+  <title>StaticFire- Layman's Static Site Generator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/grids-responsive-min.css">
+  <!-- <link rel="stylesheet" href="/css/darkmode.css"> -->
+
+  <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+  <script src="/js/vendor/feather.min.js"></script>
+
 </head>
+
 <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        /ram/blog/posts
+      </h1>
+      <p class="subtitle">
+        Developer Friendly site built using my own <strong>Static Fire Generator</strong>!
+      </p>
 
-<!-- <div id="layout" class="pure-g">
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
-        <div class="header">
-            <h1 class="brand-title">StaticFire</h1>
-            <h2 class="brand-tagline">Static Site Generator Showcase from Ram</h2>
-
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="pure-button" href="https://github.com/rammygit/homegrown/tree/purecss-theme">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="pure-button" href="https://lazydevstories.com/">lazydevstories.com</a>
-                    </li>
-                </ul>
-            </nav>
+      <!-- dark mode switch -->
+      <!-- <div id="mode_div">
+        <i class="switch_sun" data-feather="sun"></i>
+        <div id="div_colorswitch" class="color-switch">
+          <div class="switch"></div>
         </div>
-    </div> -->
+        <i class="switch_moon" data-feather="moon"></i>
+      </div> -->
+      <!-- end of dark mode switch -->
 
+      <!-- posts  -->
+      <div class="posts">
 
+        <section class="post">
+          <header class="post-header">
 
-    <div class="content pure-u-1 pure-u-md-3-4">
-        <div>
-            <!-- A wrapper for all the blog posts -->
+            <div id="content" class="post-title"></div>
+          </header>
 
-            <div id="mode_div">
-                <i class="switch_sun" data-feather="sun"></i>
-                <div id="div_colorswitch" class="color-switch">
-                    <div class="switch"></div>
-                </div>
-                <i class="switch_moon" data-feather="moon"></i>
-            </div>
-            
-
-            <div class="posts">
-                <h1 class="content-subhead">Recent Posts</h1>
-                
-                <section class="post">
-                    <header class="post-header">
-                        <!-- <img width="48" height="48" alt="Eric Ferraiuolo&#x27;s avatar" class="post-avatar" src="/img/common/ericf-avatar.png"> -->
-
-                        <div id="content" class="post-title"></div>
-                        <!-- <h2 class="post-title">Everything You Need to Know About Grunt</h2> -->
-
-                        <!-- <p class="post-meta">
-                            By <a class="post-author" href="#">Ram</a> under <a class="post-category post-category-js" href="#">JavaScript</a>
-                        </p> -->
-                    </header>
-
-                    <!-- <div class="post-description">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                    </div> -->
-                </section>
-            </div>
-
-            <div class="footer">
-                    <div><i data-feather="arrow-left"></i><a id="link_prev" href="/" > Previous </a></div>
-                    <div><i data-feather="arrow-right"></i><a id="link_next" href="/content/1" > Next </a></div>
-                    <div><i data-feather="home"></i><a href="/">Home</a></div>
-            </div>
-        </div>
+        </section>
+      </div>
+      <!-- end of posts -->
     </div>
-</div>
-<script>
+  </section>
+  <div class="content pure-u-1 pure-u-md-3-4">
+    <div>
 
-    if(localStorage.getItem('isDark') === 'true') {
-        document.querySelector('body').classList.add("dark-theme");
+      
+
+
+      
+
+      <div class="footer">
+        <div><i data-feather="arrow-left"></i><a id="link_prev" href="/"> Previous </a></div>
+        <div><i data-feather="arrow-right"></i><a id="link_next" href="/content/1"> Next </a></div>
+        <div><i data-feather="home"></i><a href="/">Home</a></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    if (localStorage.getItem('isDark') === 'true') {
+      document.querySelector('body').classList.add("dark-theme");
     } else {
-        document.querySelector('body').classList.remove("dark-theme");
+      document.querySelector('body').classList.remove("dark-theme");
     }
-        
-    
-    
+
+
+
     const btn = document.getElementById('div_colorswitch');
-    
+
     btn.addEventListener('click', (event) => {
-        const isDark = document.querySelector('body').classList.toggle("dark-theme");
-        
-        localStorage.setItem('isDark',isDark)
+      const isDark = document.querySelector('body').classList.toggle("dark-theme");
+
+      localStorage.setItem('isDark', isDark)
     });
 
     // enable feather icons. 
-     feather.replace()
+    feather.replace()
 
-    </script>
-    
+  </script>
+
 </body>
+
 </html>
