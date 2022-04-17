@@ -87,7 +87,7 @@ const start = async _ => {
   
     htmlsObject.sort((a, b) => new Date(b.contentDate) - new Date(a.contentDate))
 
-    console.log(`html object = ${JSON.stringify(htmlsObject,null, 2)}`)
+    // console.log(`html object = ${JSON.stringify(htmlsObject,null, 2)}`)
 
     // this will add pagination pbased on the strings.json file where postPerPage is used.
     const paginatedHTMLs = await paginate($,property,htmlsObject,TARGET_DIR)
