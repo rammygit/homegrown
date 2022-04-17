@@ -42,7 +42,7 @@ marked.setOptions({
 
 
 
-    // console.log('dirArr => ',dirArr)
+    /* for every file in /md directory with extension .md */
     for (const dirent of dirArr) {
 
         const file_ext = path.extname(dirent.name)
@@ -53,6 +53,7 @@ marked.setOptions({
             if (file_ext === '.html' || file_ext === '.js' || file_ext === '.css' || file_ext === '.md') {
                 if(FILE_IGNORE.indexOf (dirent.name ) == -1) {
 
+                    // process the content by using the pages/post.html
                     let appendHTML = await process(basePath, dirent,TARGET_DIR,PROJECT_DIR,property)
                     appendHTMLs.push(appendHTML)
                 } 
@@ -71,6 +72,8 @@ marked.setOptions({
 
 /**
  * process the file content and create a directory and create a index.html
+ * uses the pages/post.html for the document structure. 
+ * TODO: Need to stop using pages.html and instead use a template tag for modelling the structure
  * @param {*} basePath 
  * @param {*} dirent 
  */

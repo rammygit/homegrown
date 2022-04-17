@@ -9,4 +9,6 @@ I want to keep a list of books I encounter online and found interesting. I am re
 
 - [Teach yourself CS](https://teachyourselfcs.com)
 - [Computer Systems](https://www.amazon.com/Computer-Systems-Programmers-Perspective-3-dp-9332573905/dp/9332573905/ref=mt_other?_encoding=UTF8&me=&qid=)
-- 
+- [Operating System Notes](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/)
+- [Arxiv - process engine papers](https://arxiv.org/search/?query=%22process+engine%22&searchtype=all&abstracts=show&order=-announced_date_first&size=50&start=50)
+- [Event Streaming Processing with BeepBeep](https://liflab.gitbook.io/event-stream-processing-with-beepbeep-3)
