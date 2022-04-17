@@ -19,7 +19,7 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-        /ram/blog/posts
+        <a href="/">../ram/blog/posts</a>
       </h1>
       <p class="subtitle">
         Developer Friendly site built using my own <strong>Static Fire Generator</strong>!
@@ -49,44 +49,23 @@
       <!-- end of posts -->
     </div>
   </section>
-  <div class="content pure-u-1 pure-u-md-3-4">
-    <div>
-
-      
-
-
-      
-
-      <div class="footer">
-        <div><i data-feather="arrow-left"></i><a id="link_prev" href="/"> Previous </a></div>
-        <div><i data-feather="arrow-right"></i><a id="link_next" href="/content/1"> Next </a></div>
-        <div><i data-feather="home"></i><a href="/">Home</a></div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <script>
-    if (localStorage.getItem('isDark') === 'true') {
-      document.querySelector('body').classList.add("dark-theme");
-    } else {
-      document.querySelector('body').classList.remove("dark-theme");
-    }
-
-
-
-    const btn = document.getElementById('div_colorswitch');
-
-    btn.addEventListener('click', (event) => {
-      const isDark = document.querySelector('body').classList.toggle("dark-theme");
-
-      localStorage.setItem('isDark', isDark)
-    });
-
-    // enable feather icons. 
-    feather.replace()
-
-  </script>
-
+  <!-- <div class="content pure-u-1 pure-u-md-3-4"> -->
+    
+      <nav class="level pagination is-rounded" role="navigation" aria-label="pagination">
+        <div class="level-right">
+          <div class="level-item">
+            <a id="link_prev" href="/" class="pagination-previous">Previous</a>
+          </div>
+          <div class="level-item">
+            <a id="link_next" href="/content/1" class="pagination-next">Next page</a>
+          </div>
+        </div>
+      </nav>
+    
+  <!-- </div> -->
+  <!-- </div> -->
+  
+  <!-- <script src="/js/darkmode.js"></script> -->
 </body>
 
 </html>

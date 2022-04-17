@@ -32,7 +32,20 @@ const getHTMLWithPagination = async function($,property,htmlsObject,TARGET_DIR){
         const navObj = constructNavURL(htmlsObject,totalPosts,postPerPage,currentPageCount)
 
         $( '#link_prev').attr('href',navObj['prev'])
+        //always show 
+        $('#link_prev').attr('style',"display:'';")
+
         $( '#link_next').attr('href',navObj['next'])
+        //always show
+        $('#link_next').attr('style',"display:'';")
+
+        // if it is last page. remove the next button.
+        if(navObj['lastPage']) 
+            $('#link_next').attr('style','display:none;')
+
+        // if first page remove the previous button.
+        if(navObj['firstPage']) 
+            $('#link_prev').attr('style','display:none;')
 
 
         //splice will modify array in place. this is also modifyin the original array in the first place. 
@@ -55,7 +68,7 @@ const getHTMLWithPagination = async function($,property,htmlsObject,TARGET_DIR){
 }
 
 /**
- * 
+ * Called within a loop for every page.  Applies to every page. 
  * @param {*} htmlsObject 
  * @param {*} totalPosts 
  * @param {*} postPerPage 
@@ -76,7 +89,7 @@ const constructNavURL = (htmlsObject,totalPosts,postPerPage,currentPageCount) =>
         lastPage = true
         nextURL = '#'
         //  usecase = if there are only 2 pages. 
-        // when this is zero , point it to root index page
+        // when this is zero , point it to root index page, this is first page
         if(currentPageCount-1 === 0){
             prevURL = '/'
         } else {
@@ -98,7 +111,9 @@ const constructNavURL = (htmlsObject,totalPosts,postPerPage,currentPageCount) =>
 
     return {
         prev : prevURL,
-        next : nextURL
+        next : nextURL,
+        firstPage: firstPage,
+        lastPage: lastPage
     }
 }
 
