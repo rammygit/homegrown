@@ -16,4 +16,5 @@ Found this code pen helpful and to the point. It was no fluff and gets the idea 
 - [Bartosz Ciechanowski](https://ciechanow.ski)
 - [Martin Kleppmann](https://martin.kleppmann.com/archive.html)
 - [Julia Evans](https://jvns.ca)
-- 
+- [Brief Intro to Event Sourcing](https://www.eventstore.com/event-sourcing)
+- [How Sharding can make it faster ?](https://stackoverflow.blog/2022/03/14/how-sharding-a-database-can-make-it-faster/)
