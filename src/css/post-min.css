@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body {
-    color: #777;
-    font-family: "Recursive","Helvetica", "Arial", sans-serif;
+    color: #272525;
+    font-family: "Lato","Helvetica", "Arial", sans-serif;
 }

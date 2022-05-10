@@ -18,6 +18,17 @@ Use as much of O(1) data structures where possible. Now approach performance tun
 From [Caffeine](https://docs.google.com/presentation/d/1NlDxyXsUG1qlVHMl4vsUUBQfAJ2c2NsFPNPr2qymIBs/edit#slide=id.g833e19c165_1_641)
 
 
+## Prefetch 
+
+```
+<link rel="preload" href="my-js-file.js" as="script" type="text/javascript" />
+
+```
+
+Instead of waiting for the browser to discover these resources itself, we can provide a hint to the browser that it should start working on fetching those resources immediately.
+
+
+
 ## How ConcurrentHashMap works ? 
 
 
