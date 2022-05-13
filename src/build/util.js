@@ -111,7 +111,7 @@ const process = async function (basePath, dirent,TARGET_DIR,PROJECT_DIR,property
                                     <div class="one">${dayjs(frontMatter.data.Date).format('MMMM DD YYYY')}</div> `.concat((property.showpreview)?
                                         ` <div class="two"><a href="/content/${fileName}/">${linkTitle}</a></div></div></br>
                                            <p>${getPreviewForContent(markdownedContent)}</p></br>`
-                                    :`  <div class="three"><a href="/content/${fileName}/" class="pure-menu-link">${linkTitle}</a></div></div></br>`) 
+                                    :`  <div class="three"><a href="/content/${fileName}/">${linkTitle}</a></div></div></br>`) 
     
         returnPrintObject.contentDate = frontMatter.data.Date
 

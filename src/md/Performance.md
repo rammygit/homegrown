@@ -28,6 +28,9 @@ From [Caffeine](https://docs.google.com/presentation/d/1NlDxyXsUG1qlVHMl4vsUUBQf
 Instead of waiting for the browser to discover these resources itself, we can provide a hint to the browser that it should start working on fetching those resources immediately.
 
 
+## Caching
+
+
 
 ## How ConcurrentHashMap works ? 
 
