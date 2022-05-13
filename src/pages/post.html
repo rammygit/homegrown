@@ -19,15 +19,23 @@
   
 <body>
 
-<div id="layout" class="container is-fullhd">
-      <h1 class="title">
-        <a href="/">../ram/blog/posts</a>
-      </h1>
-      <p class="subtitle">
-        Developer Friendly site built using my own <strong>Static Fire Generator</strong>!
-      </p>
+<div id="layout">
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered is-multiline">
+        <div class="column">
+          <h1 class="title level-item has-text-centered">
+            <a href="/">../ram/blog/posts</a>
+          </h1> 
+          <p class="block subtitle level-item">
+            Developer Friendly site built using my own <strong>Static Fire Generator</strong>!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
     <!-- ID for an element is what drives the logic for this html to be rendered right -->
-    <section id="main" class="section">
+    <section id="main" class="section container is-fullhd">
         <h1 id="page_title" class="title">Section</h1>
         <h2 id="page_subtitle" class="subtitle">
           A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
@@ -36,25 +44,6 @@
             <div id="page_content"></div>
         </div>
       </section>
-    <!-- <div id="main">
-         <div class="header hero">
-            <h1 id=page_title>Page Title</h1>
-            <h2 id="page_subtitle">A subtitle for your page goes here</h2>
-        </div> 
-
-        
-    </div> -->
 </div>
-
-<!-- <script src="/js/ui.js"></script> -->
-<!-- <script>
-    if(localStorage.getItem('isDark') === 'true') {
-        document.querySelector('body').classList.add("dark-theme");
-    } else {
-        document.querySelector('body').classList.remove("dark-theme");
-    }
-    
-
-    </script> -->
 </body>
 </html>
