@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm install && node build.js production",
-    "start-dev": "npm install && node build.js dev"
+    "start-dev": "npm install && node build.js dev",
+    "local":"rm -rf public && npm start && cd public && python -m SimpleHTTPServer 8000"
   },
   "author": "",
   "license": "ISC",
