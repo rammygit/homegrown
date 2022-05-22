@@ -47,5 +47,18 @@ $link-hover:$pink;
 $link-focus:$pink;
 $link-active:$pink;
 
+
+//code
+
+$code-background: #070707;
+$pre:$pink;
+$pre-background: #101110;
+
+// navigation
+
+$pagination-color:$my-green;
+
+$footer-background-color: $darkgray;
+
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/bulma/sass/utilities/initial-variables.sass";

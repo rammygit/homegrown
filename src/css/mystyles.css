@@ -316,7 +316,7 @@ a {
     color: #FD5046; }
 
 code {
-  background-color: whitesmoke;
+  background-color: #070707;
   color: #ff3860;
   font-size: 0.875em;
   font-weight: normal;
@@ -353,8 +353,8 @@ fieldset {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  background-color: whitesmoke;
-  color: #EFF0EB;
+  background-color: #101110;
+  color: #FD5046;
   font-size: 0.875em;
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
@@ -4981,7 +4981,7 @@ a.navbar-item,
 .pagination-next,
 .pagination-link {
   border-color: #dbdbdb;
-  color: #363636;
+  color: #5bee77;
   min-width: 2.25em; }
   .pagination-previous:hover,
   .pagination-next:hover,
@@ -6954,5 +6954,5 @@ label.panel-block {
       padding: 18rem 1.5rem; } }
 
 .footer {
-  background-color: #fafafa;
+  background-color: #111827;
   padding: 3rem 1.5rem 6rem; }
