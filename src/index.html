@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <!-- <link rel="stylesheet" href="/css/index-min.css"> -->
-  <!-- <script src="/js/vendor/feather.min.js"></script> -->
+  <script src="/js/vendor/feather.min.js"></script>
 
 </head>
 <!-- style="background-color:#111827;" -->
@@ -72,13 +72,15 @@
       <div class="column is-half">
           <!-- <code class="html">is-half</code><br> -->
           <div>
-            <a id="link_prev" href="/" class="pagination-previous">Previous</a>
+            <a id="link_prev" href="/"><i data-feather="arrow-left-circle" width="52" height="52"></i></a>
           </div>
           
       </div>
       <div class="column is-half">
         <div>
-          <a id="link_next" href="/content/1" class="pagination-next">Next page</a>
+          
+            <a id="link_next" href="/content/1"><i data-feather="arrow-right-circle" width="52" height="52"></i></a>
+          <!-- <a id="link_next" href="/content/1" class="pagination-next">Next page</a> -->
         </div>
       </div>
     </div>
@@ -86,7 +88,9 @@
 
   <!-- </div> -->
   <!-- </div> -->
-
+  <script>
+    feather.replace()
+  </script>
   <!-- <script src="/js/darkmode.js"></script> -->
 </body>
 
