@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm install && node build.js production",
     "start-dev": "npm install && node build.js dev",
-    "local": "rm -rf public && npm start && npm run css-build && cd public && python -m SimpleHTTPServer 8000"
+    "local": "rm -rf public && npm run css-build && npm start && cd public && python -m SimpleHTTPServer 8000"
   },
   "author": "",
   "license": "ISC",
