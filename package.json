@@ -7,9 +7,9 @@
     "css-build": "node-sass --omit-source-map-url src/sass/mystyles.scss src/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install && npm run css-build && node build.js production",
+    "start": "npm install && node build.js production",
     "start-dev": "npm install && node build.js dev",
-    "local": "rm -rf public && npm start && cd public && python -m SimpleHTTPServer 8000"
+    "local": "rm -rf public && npm start && npm run css-build && cd public && python -m SimpleHTTPServer 8000"
   },
   "author": "",
   "license": "ISC",
