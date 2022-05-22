@@ -1,80 +1,51 @@
 @charset "utf-8";
-// @import "../../node_modules/bulma/bulma.sass";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+
 
 // Set your brand colors
-// $purple: #8A4D76;
-// $pink: #FA7C91;
-// $brown: #757763;
-// $beige-light: #D0D1CD;
+$purple: #8A4D76;
+$pink: #FD5046;
+$my-green: #5bee77;
+$brown: #757763;
+$beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
-
+$darkgray: #111827;
+$flouroscent: #c3df12d4;
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
-// $grey-dark: $brown;
-// $grey-light: $beige-light;
-// $primary: $purple;
-// $link: $pink;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+$family-sans-serif: "Lato", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $my-green;
+$widescreen-enabled: true;
+$fullhd-enabled: true;
+
+// text
+
+$text: $beige-lighter;
+$text-strong:$beige-lighter;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: $darkgray;
+$body-size: 16px;
+$body-color:$text;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-// set sizes 
-// $size-1: 3rem;
+$title-color:$text-strong;
+$title-size: 1.5rem;
 
-// Import only what you need from Bulma
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../node_modules/bulma/sass/base/_all.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
-@import "../../node_modules/bulma/sass/elements/container.sass";
-@import "../../node_modules/bulma/sass/elements/title.sass";
-@import "../../node_modules/bulma/sass/form/_all.sass";
-@import "../../node_modules/bulma/sass/components/navbar.sass";
-@import "../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../node_modules/bulma/sass/layout/section.sass";
 
-/*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */
-html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 10;
-  padding: 10; 
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 2em;
-  font-weight: bold; 
-}
+// links
+$link-hover:$pink;
+$link-focus:$pink;
+$link-active:$pink;
+
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma/sass/utilities/initial-variables.sass";

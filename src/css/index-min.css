@@ -1,8 +1,19 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-body {
-    color: #272525;
-    font-family: "Lato","Helvetica", "Arial", sans-serif;
-    font-size: large;
+body{
+    font-size: 1.5em;
+}
+
+.postpadding {
+    padding-left: 20rem;
+}
+
+/* for mobile */
+@media screen and (max-width: 1023px) {
+    .postpadding {
+        padding-left: 0.5rem;
+    }
+
+    body{
+        font-size: 1.25em;
+    }
 }
