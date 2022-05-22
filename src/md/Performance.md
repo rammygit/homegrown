@@ -28,6 +28,21 @@ From [Caffeine](https://docs.google.com/presentation/d/1NlDxyXsUG1qlVHMl4vsUUBQf
 Instead of waiting for the browser to discover these resources itself, we can provide a hint to the browser that it should start working on fetching those resources immediately.
 
 
+## Ground Rules 
+
+[Designing for Performance • Martin Thompson • GOTO 2015](https://www.youtube.com/watch?v=fDGWWpHlzvw)
+
+- Don't use Abstraction unless you see it repeat itself 3 times. 
+- Beware DRY, it is the evil siren that tricks you into the abstraction
+- Try to avoid big frameworks. ` we are missing the point of travelling light`
+- Detail of the underlying complexity cannot be ignored 
+
+
+#### Coupling vs Cohesion 
+
+
+
+
 ## Caching
 
 
