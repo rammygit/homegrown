@@ -15,4 +15,5 @@ Found this code pen helpful and to the point. It was no fluff and gets the idea 
 - [Brief Intro to Event Sourcing](https://www.eventstore.com/event-sourcing)
 - [How Sharding can make it faster ?](https://stackoverflow.blog/2022/03/14/how-sharding-a-database-can-make-it-faster/)
 - [Synchronization in Java series](https://blogs.oracle.com/javamagazine/post/java-thread-synchronization-synchronized-blocks-adhoc-locks?source=:em:nw:mt::::RC_WWMK200429P00043C0053:NSL400220891&elq_mid=217875&sh=0926141606142609293529351006&cmid=WWMK200429P00043C0053)
+- [Event Driven Service Orchestration](https://dzone.com/articles/event-driven-orchestration-an-effective-microservi)
 
