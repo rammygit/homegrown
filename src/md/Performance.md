@@ -46,6 +46,13 @@ Instead of waiting for the browser to discover these resources itself, we can pr
 ## Caching
 
 
+Local Caching
+
+<img src="https://i.ibb.co/ZxW3LS5/Local-Cache.png" alt="Local-Cache" border="0">
+
+
+
+
 
 ## How ConcurrentHashMap works ? 
 

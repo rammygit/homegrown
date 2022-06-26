@@ -41,4 +41,20 @@ So do Stored Procedures have their place in 2021 ? I don't see many favoring it,
 Domain is what you are writing program for. Subject area you trying to solve. Figure out of domain, ....
 
 
+## Characteristics of Microservice
+
+- runs in isolation
+- has a Bounded Context
+- has a decentralized data storage
+- embraces Evolution
+
+## Challenges 
+
+- Distributed Transactions
+- Point-to-Point mess
+- Performance
+
+
+
+
 

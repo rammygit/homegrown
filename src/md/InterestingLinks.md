@@ -17,3 +17,4 @@ Found this code pen helpful and to the point. It was no fluff and gets the idea 
 - [Synchronization in Java series](https://blogs.oracle.com/javamagazine/post/java-thread-synchronization-synchronized-blocks-adhoc-locks?source=:em:nw:mt::::RC_WWMK200429P00043C0053:NSL400220891&elq_mid=217875&sh=0926141606142609293529351006&cmid=WWMK200429P00043C0053)
 - [Event Driven Service Orchestration](https://dzone.com/articles/event-driven-orchestration-an-effective-microservi)
 - [Temporal - Microservice Orchestrator Architecture](https://mikhail.io/2020/10/practical-approach-to-temporal-architecture/)
+- [EDA and CEP](https://go.gridgain.com/rs/491-TWR-806/images/2021-04-13_AIMeetup_Using_Ignite_and_Drools.pdf)

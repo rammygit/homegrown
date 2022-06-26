@@ -35,3 +35,11 @@ npm start
 ```
 
 The target folder is **public** 
+
+
+
+
+
+## Bit about css and page layout. 
+
+You will find a index.html in the src directory. 
