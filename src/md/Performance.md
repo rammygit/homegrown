@@ -48,8 +48,7 @@ Instead of waiting for the browser to discover these resources itself, we can pr
 
 Local Caching
 
-<img src="https://i.ibb.co/ZxW3LS5/Local-Cache.png" alt="Local-Cache" border="0">
-
+<img src="https://i.ibb.co/LNk0KZ5/Local-Cache-2-dark.png" alt="Local-Cache-2-dark" border="0">
 
 
 
