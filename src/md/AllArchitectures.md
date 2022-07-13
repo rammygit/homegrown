@@ -13,3 +13,4 @@ Author: Ramkumar
 - [Apache Cassandra Architecture](https://cassandra.apache.org/doc/latest/cassandra/architecture/overview.html)
 - [Apache Samza Architecture](https://samza.apache.org/learn/documentation/1.6.0/architecture/architecture-overview.html)
 - [Apache Pulsar Architecture](https://pulsar.apache.org/docs/next/concepts-architecture-overview)
+- [Apache Zookeeper](https://zookeeper.apache.org/doc/r3.8.0/zookeeperOver.html)

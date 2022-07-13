@@ -55,6 +55,31 @@ Domain is what you are writing program for. Subject area you trying to solve. Fi
 - Performance
 
 
+## Caching
+
+For Caching - Look at the [performance consideration](https://staticfire.site/content/performance/) article I wrote 
+
+
+## Data Challenges
+
+- Veracity
+    - Data Management
+    - Data Reliability 
+- Variety
+    - Various data structures
+    - Structured, UnStructured, Semi-Structured
+- Volume
+- Velocity
+    - Real Time Data Analytics
+    - Integrating Data Streams 
+
+So what are the patterns we have in Data Integration
+
+## Traditional Data Integration
+
+Source -> ETL -- (batched ) --> Data Warehouse 
+
+
 
 
 

@@ -18,3 +18,6 @@ Found this code pen helpful and to the point. It was no fluff and gets the idea 
 - [Event Driven Service Orchestration](https://dzone.com/articles/event-driven-orchestration-an-effective-microservi)
 - [Temporal - Microservice Orchestrator Architecture](https://mikhail.io/2020/10/practical-approach-to-temporal-architecture/)
 - [EDA and CEP](https://go.gridgain.com/rs/491-TWR-806/images/2021-04-13_AIMeetup_Using_Ignite_and_Drools.pdf)
+- [Jet.com's journey to workflows](https://www.infoq.com/news/2019/02/migrate-microservices-workflows/)
+- [ACM - Life beyond Distributed Transactions *](https://queue.acm.org/detail.cfm?id=3025012)
+- [Memory Management Links](https://www.memorymanagement.org)
