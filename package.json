@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url src/sass/mystyles.scss src/css/mystyles.css",
+    "css-build": "sass --no-source-map  src/sass/mystyles.scss src/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm install && node build.js production",
     "start-dev": "npm install && node build.js dev",
-    "local": "rm -rf public && npm run css-build && npm start && cd public && python -m SimpleHTTPServer 8000"
+    "local": "rm -rf public && npm run css-build && npm start && cd public && python3 -m http.server"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +32,6 @@
     "yargs": "16.2.0"
   },
   "devDependencies": {
-    "node-sass": "^7.0.1"
+    "sass": "1.54.0"
   }
 }
