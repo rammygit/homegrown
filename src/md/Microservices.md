@@ -80,9 +80,19 @@ So what are the patterns we have in Data Integration
 Source -> ETL -- (batched ) --> Data Warehouse 
 
 
+## Advantages with Microservice Architectures
+
+- Speed to Market
+- 
+
 
 ## Problems with Microservices
 
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of    the organization’s communication structure. — Melvin E. Conway
+
+Many advocate Microservices should treat its API as public facing. This way they have independence. But you cannot introduce breaking changes and need to document your API properly.
+
+> The monoliths are good to start with as they help the team in learning about the new domain and nature of business however they are required to be re-structured if quick turnaround is expected for new features.
+
 
 

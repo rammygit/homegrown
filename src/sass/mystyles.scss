@@ -16,6 +16,7 @@ $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 $darkgray: #111827;
 $flouroscent: #c3df12d4;
+$blue-blockquote: #1c487b;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
@@ -25,6 +26,8 @@ $primary: $purple;
 $link: $my-green;
 $widescreen-enabled: true;
 $fullhd-enabled: true;
+
+
 
 // text
 
@@ -61,6 +64,8 @@ $pre-background: #101110;
 $pagination-color:$my-green;
 
 $footer-background-color: $darkgray;
+
+$content-blockquote-background-color: $blue-blockquote;
 
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
